@@ -36,10 +36,14 @@
 ;;; Code:
 
 (use-package vue-mode
-  :after (add-node-modules-path flycheck)
+  :after flycheck
 
   :init
   (setq-default indent-tabs-mode nil)
+
+  :config
+  (use-package add-node-modules-path)
+  (add-node-modules-path)
 
   :custom
   (setq js-indent-level 2)

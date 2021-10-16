@@ -37,17 +37,14 @@
   :config
   (helm-mode 1)
 
+  (use-package ag)
+  (use-package helm-ag)
+  (use-package helm-projectile)
+
   :bind
   (("C-x b" . helm-mini)
    ("C-x r b" .  helm-filtered-bookmarks)
    ("M-x" . helm-M-x)))
-
-(use-package ag)
-(use-package helm-ag
-  :after ag)
-
-(use-package helm-projectile
-  :after projectile)
 
 (provide 'init-helm)
 

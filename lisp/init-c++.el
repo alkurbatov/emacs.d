@@ -52,15 +52,15 @@
   ;; Default include paths.
   (setq flycheck-clang-include-path (list "/opt/local/include"))
 
+  (use-package cmake-font-lock)
+
+  (use-package modern-cpp-font-lock
+    :init
+    (modern-c++-font-lock-global-mode t))
+
   :custom
   (setq c-basic-offset 4)
   (c-set-style "bsd"))
-
-(use-package cmake-font-lock)
-
-(use-package modern-cpp-font-lock
-  :init
-  (modern-c++-font-lock-global-mode t))
 
 (provide 'init-c++)
 

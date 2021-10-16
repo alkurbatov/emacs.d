@@ -33,16 +33,16 @@
 
 ;;; Code:
 
-(use-package add-node-modules-path)
-(use-package prettier)
-
 (use-package js2-mode
-  :after (add-node-modules-path flycheck prettier)
+  :after flycheck
 
   :init
   (setq-default indent-tabs-mode nil)
 
   :config
+  (use-package add-node-modules-path)
+  (use-package prettier)
+
   ;; Replace builtin JavaScript mode.
   (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
   (add-to-list 'interpreter-mode-alist '("node" . js2-mode))
