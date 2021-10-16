@@ -35,7 +35,7 @@
 
 (use-package elpy
   :init
-  (elpy-enable)
+  (advice-add 'python-mode :before 'elpy-enable)
 
   :config
   (when (load "flycheck" t t)
