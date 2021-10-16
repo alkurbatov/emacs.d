@@ -53,7 +53,19 @@
   (setq use-package-always-ensure t)
   (setq use-package-always-defer t)
   (setq use-package-expand-minimally t)
+  (setq use-package-compute-statistics t) ; call 'M-x use-package-report' to see detailed statistics
   (setq use-package-enable-imenu-support t))
+
+;; Automatically updates installed packages.
+(use-package auto-package-update
+  :custom
+  (auto-package-update-interval 7) ; in days
+  (auto-package-update-prompt-before-update t)
+  (auto-package-update-delete-old-versions t)
+  (auto-package-update-hide-results t)
+
+  :config
+  (auto-package-update-maybe))
 
 (eval-when-compile
   (require 'use-package))
