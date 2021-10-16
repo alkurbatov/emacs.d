@@ -38,6 +38,18 @@
   (git-commit-summary-max-length 50)
   (git-commit-fill-column 72))
 
+(use-package git-gutter
+  :diminish
+
+  :init
+  (global-git-gutter-mode t)
+
+  :custom
+  (git-gutter:update-interval 2)
+  (git-gutter:modified-sign "•")
+  (git-gutter:added-sign "•")
+  (git-gutter:deleted-sign "•"))
+
 (provide 'init-git)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
