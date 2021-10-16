@@ -38,8 +38,9 @@
   :init
   (load-theme 'tango-2 t))
 
-(global-linum-mode 1)     ; always show line numbers
-(setq linum-format "%d ") ; add delemeter between line numbers and code
+;; Always show line numbers.
+(global-display-line-numbers-mode t)
+(setq display-line-numbers "%4d \u2502 ")
 
 (column-number-mode 1) ; always show column number
 
