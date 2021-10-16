@@ -39,6 +39,8 @@
 
 ;; Trim trailing whitespaces on changed lines.
 (use-package ws-butler
+  :diminish
+
   :init
   (setq-default show-trailing-whitespace t)
 

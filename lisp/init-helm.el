@@ -34,6 +34,8 @@
 ;;; Code:
 
 (use-package helm
+  :diminish
+
   :config
   (helm-mode 1)
 

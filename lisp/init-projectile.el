@@ -36,6 +36,8 @@
 ;;; Code:
 
 (use-package projectile
+  :diminish
+
   :config
   (projectile-mode +1)
   (helm-projectile-on)

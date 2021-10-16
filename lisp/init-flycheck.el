@@ -34,6 +34,8 @@
 ;;; Code:
 
 (use-package flycheck
+  :diminish
+
   :custom-face
   (flycheck-error ((t (:background "color-52" :underline nil))))
   (flycheck-warning ((t (:background "color-58" :underline nil))))
