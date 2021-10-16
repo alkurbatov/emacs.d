@@ -1,0 +1,52 @@
+;; init-ui.el --- Better lookings and appearances.
+
+;; Copyright (c) 2021 Alexander Kurbatov
+;;
+;; Author: Alexander.Kurbatov <sandro.kurbatov@gmail.com>
+;; URL: https://github.com/alkurbatov/emacs.d
+;;
+;; This file is not part of GNU Emacs.
+;;
+;; Permission is hereby granted, free of charge, to any person obtaining a copy
+;; of this software and associated documentation files (the "Software"), to deal
+;; in the Software without restriction, including without limitation the rights
+;; to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+;; copies of the Software, and to permit persons to whom the Software is
+;; furnished to do so, subject to the following conditions:
+;;
+;; The above copyright notice and this permission notice shall be included in all
+;; copies or substantial portions of the Software.
+;;
+;; THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+;; IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+;; FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+;; AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+;; LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+;; OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+;; SOFTWARE.
+;;
+
+;;; Commentary:
+;;
+;; Visual (UI) configurations for better lookings and appearances.
+;;
+
+;;; Code:
+
+;; Set colortheme.
+(use-package tango-2-theme
+  :init
+  (load-theme 'tango-2 t))
+
+(global-linum-mode 1)     ; always show line numbers
+(setq linum-format "%d ") ; add delemeter between line numbers and code
+
+(column-number-mode 1) ; always show column number
+
+(menu-bar-mode -1) ; hide the menu bar
+(tool-bar-mode -1) ; hide the tool bar
+
+(provide 'init-ui)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; init-ui.el ends here
