@@ -47,6 +47,10 @@
   :hook
   (prog-mode . ws-butler-mode)) ; do not enable in text-mode to avoid trimming in markdown files
 
+(defun insert-date ()
+  (interactive)
+  (insert (format-time-string "%d-%m-%Y")))
+
 (provide 'init-edit)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
