@@ -46,6 +46,16 @@
 (setq calendar-week-start-day 1)     ; start week from Monday
 (setq calendar-date-style 'european) ; use the DD/MM/YYYY format for the diary dates
 
+;; Show nice-looking embedded help.
+(use-package helpful
+  :bind
+  (("C-h f"   . helpful-callable)
+   ("C-h v"   . helpful-variable)
+   ("C-h k"   . helpful-key)
+   ("C-c C-d" . helpful-at-point)
+   ("C-h F"   . helpful-function)
+   ("C-h C"   . helpful-command)))
+
 (provide 'init-basic)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
