@@ -1,4 +1,4 @@
-;; init.el --- A Fancy and Fast Emacs Configuration.
+;; init-terminal.el --- Initialize terminal configurations.
 
 ;; Copyright (c) 2021 Alexander Kurbatov
 ;;
@@ -28,41 +28,29 @@
 
 ;;; Commentary:
 ;;
-;; Centaur Emacs - A Fancy and Fast Emacs Configuration.
+;; Terminal configuration.
 ;;
 
 ;;; Code:
 
-(add-to-list 'load-path "~/.emacs.d/lisp/")
+(defun open-eshell ()
+  "Open eshell in a separate window at the bottom of the screen."
+  (interactive)
+  (let* ((default-directory (projectile-project-root))
+         (height (/ (window-total-height) 3)))
+    (split-window-below (- height))
+    (other-window 1)
+    (eshell)))
 
-;; Packages.
-(require 'init-package)
+(use-package eshell
+  :ensure nil
 
-;; General settings.
-(require 'init-basic)
-(require 'init-edit)
-(require 'init-helm)
-(require 'init-ui)
+  :after projectile
 
-;; Programming.
-(require 'init-flycheck)
-(require 'init-git)
-(require 'init-help)
-(require 'init-projectile)
-(require 'init-yasnippet)
-(require 'init-terminal)
+  :bind
+  ("C-x `" . open-eshell))
 
-;; Languages.
-(require 'init-bash)
-(require 'init-c++)
-(require 'init-jinja2)
-(require 'init-js)
-(require 'init-json)
-(require 'init-markdown)
-(require 'init-ps1)
-(require 'init-python)
-(require 'init-vue)
-(require 'init-yaml)
+(provide 'init-terminal)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; init.el ends here
+;;; init-terminal.el ends here
