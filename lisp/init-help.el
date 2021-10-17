@@ -1,4 +1,4 @@
-;; init-basic.el --- Better default configurations.
+;; init-help.el --- Initialize documentation and search configurations.
 
 ;; Copyright (c) 2021 Alexander Kurbatov
 ;;
@@ -28,25 +28,46 @@
 
 ;;; Commentary:
 ;;
-;; Better defaults.
+;; Documentation and search configuration.
 ;;
 
 ;;; Code:
 
-;; Backups.
-(setq backup-directory-alist '(("." . "~/.emacs.d/backups/")))
-(setq auto-save-file-name-transforms '((".*" "~/.emacs.d/backups/" t)))
+;; Show nice-looking embedded help.
+(use-package helpful
+  :bind
+  (("C-h f"   . helpful-callable)
+   ("C-h v"   . helpful-variable)
+   ("C-h k"   . helpful-key)
+   ("C-c C-d" . helpful-at-point)
+   ("C-h F"   . helpful-function)
+   ("C-h C"   . helpful-command)))
 
-(fset 'yes-or-no-p 'y-or-n-p) ; answer y or n instead of yes or no
+(use-package engine-mode
+  :config
+  (engine-mode t)
 
-;; Buffers.
-(kill-buffer "*scratch*") ; usually not used
+  (defengine google
+    "http://www.google.com/search?ie=utf-8&oe=utf-8&q=%s"
+    :keybinding "g")
 
-;; Calendar.
-(setq calendar-week-start-day 1)     ; start week from Monday
-(setq calendar-date-style 'european) ; use the DD/MM/YYYY format for the diary dates
+  (defengine github
+    "https://github.com/search?ref=simplesearch&q=%s"
+    :keybinding "h")
 
-(provide 'init-basic)
+  (defengine stack-overflow
+    "https://stackoverflow.com/search?q=%s"
+    :keybinding "s")
+
+  (defengine cppreference
+    "https://duckduckgo.com/?sites=cppreference.com&q=%s&ia=web"
+    :keybinding "c")
+
+  (defengine python
+    "https://docs.python.org/3/search.html?q=%s&check_keywords=yes&area=default"
+    :keybinding "p"))
+
+(provide 'init-help)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; init-basic.el ends here
+;;; init-help.el ends here

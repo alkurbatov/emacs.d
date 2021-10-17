@@ -47,6 +47,7 @@
 ;; Programming.
 (require 'init-flycheck)
 (require 'init-git)
+(require 'init-help)
 (require 'init-projectile)
 (require 'init-yasnippet)
 
