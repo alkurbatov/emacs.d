@@ -1,4 +1,4 @@
-;; init.el --- A Fancy and Fast Emacs Configuration.
+;; init-lisp.el --- Initialize Lisp configurations.
 
 ;; Copyright (c) 2021 Alexander Kurbatov
 ;;
@@ -28,42 +28,21 @@
 
 ;;; Commentary:
 ;;
-;; Centaur Emacs - A Fancy and Fast Emacs Configuration.
+;; Lisp configuration.
 ;;
 
 ;;; Code:
 
-(add-to-list 'load-path "~/.emacs.d/lisp/")
+(use-package elisp-mode
+  :ensure nil
 
-;; Packages.
-(require 'init-package)
+  :init
+  (setq-default indent-tabs-mode nil)
 
-;; General settings.
-(require 'init-basic)
-(require 'init-edit)
-(require 'init-helm)
-(require 'init-ui)
+  :config
+  (show-paren-mode t))
 
-;; Programming.
-(require 'init-flycheck)
-(require 'init-git)
-(require 'init-help)
-(require 'init-lisp)
-(require 'init-projectile)
-(require 'init-yasnippet)
-(require 'init-terminal)
-
-;; Languages.
-(require 'init-bash)
-(require 'init-c++)
-(require 'init-jinja2)
-(require 'init-js)
-(require 'init-json)
-(require 'init-markdown)
-(require 'init-ps1)
-(require 'init-python)
-(require 'init-vue)
-(require 'init-yaml)
+(provide 'init-lisp)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; init.el ends here
+;;; init-lisp.el ends here
