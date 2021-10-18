@@ -47,7 +47,8 @@
 (menu-bar-mode -1) ; hide the menu bar
 (tool-bar-mode -1) ; hide the tool bar
 
-(diminish 'eldoc-mode) ; hide ElDoc mode in modeline
+(diminish 'abbrev-mode) ; hide Abbrev mode
+(diminish 'eldoc-mode)  ; hide ElDoc mode in modeline
 
 (provide 'init-ui)
 
