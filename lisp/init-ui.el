@@ -33,10 +33,39 @@
 
 ;;; Code:
 
-;; Set colortheme.
-(use-package tango-2-theme
+(use-package spacemacs-theme
   :init
-  (load-theme 'tango-2 t))
+  (load-theme 'spacemacs-dark t))
+
+(use-package spaceline
+  :demand t
+
+  :init
+  (setq powerline-default-separator 'arrow-fade)
+
+  :config
+  (require 'spaceline-config)
+  (spaceline-spacemacs-theme)
+
+  (spaceline-compile
+    ;; Left side.
+    '((version-control :when active
+                       :priority 78)
+      ((flycheck-error flycheck-warning flycheck-info)
+       :when active
+       :priority 89)
+      (buffer-id :priority 98)
+      ((point-position
+        line-column)
+       :priority 96))
+
+    ;; Right side.
+    '((python-pyvenv :fallback python-pyenv)
+      input-method
+      (buffer-encoding :priority 96)
+      (major-mode :priority 79)
+      (minor-modes :when active
+                   :priority 9))))
 
 ;; Always show line numbers.
 (global-display-line-numbers-mode t)
