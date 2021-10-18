@@ -55,7 +55,7 @@
   (use-package cmake-font-lock)
 
   (use-package modern-cpp-font-lock
-    :diminish
+    :diminish modern-c++-font-lock-mode
 
     :init
     (modern-c++-font-lock-global-mode t))
