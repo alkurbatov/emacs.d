@@ -38,6 +38,10 @@
   (advice-add 'python-mode :before 'elpy-enable)
 
   :config
+  (setq elpy-rpc-virtualenv-path 'current) ; use virtualenv of the current project
+
+  (defalias 'workon 'pyvenv-workon)
+
   (when (load "flycheck" t t)
     (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
     (add-hook 'elpy-mode-hook 'flycheck-mode))
