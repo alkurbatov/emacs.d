@@ -1,4 +1,4 @@
-;; init.el --- A Fancy and Fast Emacs Configuration.
+;; init-r.el --- Initialize R configurations.
 
 ;; Copyright (c) 2021 Alexander Kurbatov
 ;;
@@ -28,43 +28,14 @@
 
 ;;; Commentary:
 ;;
-;; Centaur Emacs - A Fancy and Fast Emacs Configuration.
+;; R configuration.
 ;;
 
 ;;; Code:
 
-(add-to-list 'load-path "~/.emacs.d/lisp/")
+(use-package ess)
 
-;; Packages.
-(require 'init-package)
-
-;; General settings.
-(require 'init-basic)
-(require 'init-edit)
-(require 'init-helm)
-(require 'init-ui)
-
-;; Programming.
-(require 'init-flycheck)
-(require 'init-git)
-(require 'init-help)
-(require 'init-lisp)
-(require 'init-projectile)
-(require 'init-yasnippet)
-(require 'init-terminal)
-
-;; Languages.
-(require 'init-bash)
-(require 'init-c++)
-(require 'init-jinja2)
-(require 'init-js)
-(require 'init-json)
-(require 'init-markdown)
-(require 'init-ps1)
-(require 'init-python)
-(require 'init-r)
-(require 'init-vue)
-(require 'init-yaml)
+(provide 'init-r)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; init.el ends here
+;;; init-r.el ends here
