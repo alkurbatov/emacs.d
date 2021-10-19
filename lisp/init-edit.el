@@ -48,6 +48,7 @@
   (prog-mode . ws-butler-mode)) ; do not enable in text-mode to avoid trimming in markdown files
 
 (defun insert-date ()
+  "Insert current date into the buffer."
   (interactive)
   (insert (format-time-string "%d-%m-%Y")))
 
