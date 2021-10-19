@@ -1,4 +1,4 @@
-;; init.el --- A Fancy and Fast Emacs Configuration.
+;; init.el --- Main initialisation routine.
 
 ;; Copyright (c) 2021 Alexander Kurbatov
 ;;
