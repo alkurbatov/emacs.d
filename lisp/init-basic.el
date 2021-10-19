@@ -35,7 +35,7 @@
 
 ;; Backups.
 (setq backup-directory-alist '(("." . "~/.emacs.d/backups/")))
-(setq auto-save-file-name-transforms '((".*" "~/.emacs.d/backups/" t)))
+(setq auto-save-file-name-transforms `((".*" ,"~/.emacs.d/backups/" t)))
 
 (fset 'yes-or-no-p 'y-or-n-p) ; answer y or n instead of yes or no
 
