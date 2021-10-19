@@ -49,7 +49,9 @@
 
   (spaceline-compile
     ;; Left side.
-    '((version-control :when active
+    '((projectile-root :when active
+                       :priority: 85)
+      (version-control :when active
                        :priority 78)
       ((flycheck-error flycheck-warning flycheck-info)
        :when active
