@@ -33,12 +33,20 @@
 
 ;;; Code:
 
-(defun open-eshell ()
+(defun open-eshell-at-bottom ()
   "Open eshell in a separate window at the bottom of the screen."
   (interactive)
   (let* ((default-directory (projectile-project-root))
          (height (/ (window-total-height) 3)))
     (split-window-below (- height))
+    (other-window 1)
+    (eshell)))
+
+(defun open-eshell-at-right-side ()
+  "Open eshell in a separate window at the right side of the screen."
+  (interactive)
+  (let* ((default-directory (projectile-project-root)))
+    (split-window-right)
     (other-window 1)
     (eshell)))
 
@@ -48,7 +56,8 @@
   :after projectile
 
   :bind
-  ("C-x `" . open-eshell))
+  (("C-x -" . open-eshell-at-bottom)
+   ("C-x |" . open-eshell-at-right-side)))
 
 (provide 'init-terminal)
 
