@@ -46,6 +46,9 @@
 (setq calendar-week-start-day 1)     ; start week from Monday
 (setq calendar-date-style 'european) ; use the DD/MM/YYYY format for the diary dates
 
+;; Mouse.
+(xterm-mouse-mode t) ; enable basic mouse support to prevent scrolling issues etc
+
 (provide 'init-basic)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
