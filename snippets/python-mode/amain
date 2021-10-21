@@ -1,0 +1,17 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: amain
+# key: amain
+# --
+import asyncio
+import sys
+
+
+async def main():
+    ${1:}
+
+    return 0
+
+
+if __name__ == "__main__":
+    rv = asyncio.run(main())
+    sys.exit(rv)
