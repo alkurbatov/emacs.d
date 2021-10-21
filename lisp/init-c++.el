@@ -42,6 +42,10 @@
   (setq-default indent-tabs-mode nil)
 
   :config
+  (setq flycheck-cppcheck-standards "c++17")
+  (setq flycheck-clang-language-standard "c++17")
+  (setq flycheck-gcc-language-standard "c++17")
+
   ;; Setup flycheck.
   ;; Do C-c ! s for manual selection of a checker.
   ;; Do C-c ! v to verify which checkers used and in which order.
