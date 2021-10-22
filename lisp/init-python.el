@@ -34,11 +34,11 @@
 ;;; Code:
 
 (use-package elpy
-  :init
-  (advice-add 'python-mode :before 'elpy-enable)
+  :after projectile
 
   :config
-  (setq elpy-rpc-virtualenv-path 'current) ; use virtualenv of the current project
+  (if (projectile-project-p)                    ; check if we are in a project
+      (setq elpy-rpc-virtualenv-path 'current)) ; use virtualenv of the current project
 
   (defalias 'workon 'pyvenv-workon)
 
@@ -52,6 +52,12 @@
   (elpy-mode . (lambda ()
 		 (add-hook 'before-save-hook
 			   'elpy-black-fix-code nil t))))
+
+(use-package python
+  :ensure nil
+
+  :init
+  (elpy-enable))
 
 (provide 'init-python)
 
