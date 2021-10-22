@@ -47,6 +47,11 @@
   :hook
   (prog-mode . ws-butler-mode)) ; do not enable in text-mode to avoid trimming in markdown files
 
+(use-package avy
+  :bind
+  (("M-g c" . avy-goto-char-in-line)
+   ("M-g w" . avy-goto-word-1)))
+
 (defun insert-date ()
   "Insert current date into the buffer."
   (interactive)
