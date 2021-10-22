@@ -33,9 +33,9 @@
 
 ;;; Code:
 
-(use-package spacemacs-theme
+(use-package tango-2-theme
   :init
-  (load-theme 'spacemacs-dark t))
+  (load-theme 'tango-2 t))
 
 (use-package spaceline
   :demand t
