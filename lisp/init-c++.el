@@ -40,6 +40,7 @@
 
   :init
   (setq-default indent-tabs-mode nil)
+  (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode)) ; force C++ mode for all headers
 
   :config
   (setq flycheck-cppcheck-standards "c++17")
