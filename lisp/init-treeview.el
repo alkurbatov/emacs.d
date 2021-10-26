@@ -1,4 +1,4 @@
-;; init.el --- Main initialisation routine.
+;; init-treeview.el --- Initialize tree view configurations.
 
 ;; Copyright (c) 2021 Alexander Kurbatov
 ;;
@@ -28,44 +28,23 @@
 
 ;;; Commentary:
 ;;
-;; Centaur Emacs - A Fancy and Fast Emacs Configuration.
+;; Tree view configuration.
 ;;
 
 ;;; Code:
 
-(add-to-list 'load-path "~/.emacs.d/lisp/")
+(use-package treemacs
+  :config
+  (treemacs-project-follow-mode t)
+  (treemacs-display-current-project-exclusively)
 
-;; Packages.
-(require 'init-package)
+  :bind
+  ([f10] . treemacs))
 
-;; General settings.
-(require 'init-basic)
-(require 'init-edit)
-(require 'init-helm)
-(require 'init-treeview)
-(require 'init-ui)
+(use-package treemacs-projectile
+  :after projectile)
 
-;; Programming.
-(require 'init-flycheck)
-(require 'init-git)
-(require 'init-help)
-(require 'init-lisp)
-(require 'init-projectile)
-(require 'init-yasnippet)
-(require 'init-terminal)
-
-;; Languages.
-(require 'init-bash)
-(require 'init-c++)
-(require 'init-jinja2)
-(require 'init-js)
-(require 'init-json)
-(require 'init-markdown)
-(require 'init-ps1)
-(require 'init-python)
-(require 'init-r)
-(require 'init-vue)
-(require 'init-yaml)
+(provide 'init-treeview)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; init.el ends here
+;;; init-treeview.el ends here
