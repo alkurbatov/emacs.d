@@ -46,12 +46,7 @@
     (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
     (add-hook 'elpy-mode-hook 'flycheck-mode))
 
-  (use-package blacken)
-
-  :hook
-  (elpy-mode . (lambda ()
-		 (add-hook 'before-save-hook
-			   'elpy-black-fix-code nil t))))
+  (use-package blacken))
 
 (use-package python
   :ensure nil
