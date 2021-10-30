@@ -1,5 +1,5 @@
 # -*- mode: snippet; require-final-newline: nil -*-
-# name: ivec
-# key: ivec
+# name: #i
+# key: #i
 # --
-#include <vector>
+#include $1

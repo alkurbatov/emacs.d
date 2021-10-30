@@ -1,5 +1,5 @@
 # -*- mode: snippet; require-final-newline: nil -*-
-# name: istr
-# key: istr
+# name: #io
+# key: #io
 # --
-#include <string>
+#include <iostream>
