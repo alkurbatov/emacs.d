@@ -28,7 +28,7 @@
 
 ;;; Commentary:
 ;;
-;; Centaur Emacs - A Fancy and Fast Emacs Configuration.
+;; A Fancy Emacs Configuration.
 ;;
 
 ;;; Code:
