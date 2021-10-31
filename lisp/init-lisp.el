@@ -1,4 +1,4 @@
-;; init-lisp.el --- Initialize Lisp configurations.
+;; init-lisp.el --- Initialize Lisp configurations. -*- lexical-binding: t -*
 
 ;; Copyright (c) 2021 Alexander Kurbatov
 ;;

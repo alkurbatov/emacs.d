@@ -1,4 +1,4 @@
-;; init-ps1.el --- Initialize Powershell configurations.
+;; init-ps1.el --- Initialize Powershell configurations. -*- lexical-binding: t -*
 
 ;; Copyright (c) 2021 Alexander Kurbatov
 ;;

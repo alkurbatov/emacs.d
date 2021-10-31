@@ -1,4 +1,4 @@
-;; init-bash.el --- Initialize Bash configurations.
+;; init-bash.el --- Initialize Bash configurations. -*- lexical-binding: t -*
 
 ;; Copyright (c) 2021 Alexander Kurbatov
 ;;

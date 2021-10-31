@@ -1,4 +1,4 @@
-;; init-python.el --- Initialize Python configurations.
+;; init-python.el --- Initialize Python configurations. -*- lexical-binding: t -*
 
 ;; Copyright (c) 2021 Alexander Kurbatov
 ;;

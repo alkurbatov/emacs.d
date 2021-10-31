@@ -1,4 +1,4 @@
-;; init-js.el --- Initialize JavaScript configurations.
+;; init-js.el --- Initialize JavaScript configurations. -*- lexical-binding: t -*
 
 ;; Copyright (c) 2021 Alexander Kurbatov
 ;;

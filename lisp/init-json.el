@@ -1,4 +1,4 @@
-;; init-json.el --- Initialize JSON configurations.
+;; init-json.el --- Initialize JSON configurations. -*- lexical-binding: t -*
 
 ;; Copyright (c) 2021 Alexander Kurbatov
 ;;

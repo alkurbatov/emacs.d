@@ -1,4 +1,4 @@
-;; init-jinja2.el --- Initialize Jinja2 configurations.
+;; init-jinja2.el --- Initialize Jinja2 configurations. -*- lexical-binding: t -*
 
 ;; Copyright (c) 2021 Alexander Kurbatov
 ;;

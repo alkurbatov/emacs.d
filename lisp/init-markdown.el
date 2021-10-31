@@ -1,4 +1,4 @@
-;; init-markdown.el --- Initialize Markdown configurations.
+;; init-markdown.el --- Initialize Markdown configurations. -*- lexical-binding: t -*
 
 ;; Copyright (c) 2021 Alexander Kurbatov
 ;;

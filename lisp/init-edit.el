@@ -1,4 +1,4 @@
-;; init-edit.el --- Initialize editing configurations.
+;; init-edit.el --- Initialize editing configurations. -*- lexical-binding: t -*
 
 ;; Copyright (c) 2021 Alexander Kurbatov
 ;;

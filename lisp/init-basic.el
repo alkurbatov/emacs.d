@@ -1,4 +1,4 @@
-;; init-basic.el --- Better default configurations.
+;; init-basic.el --- Better default configurations. -*- lexical-binding: t -*
 
 ;; Copyright (c) 2021 Alexander Kurbatov
 ;;

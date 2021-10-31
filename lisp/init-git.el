@@ -1,4 +1,4 @@
-;; init-git.el --- Initialize Git configurations.
+;; init-git.el --- Initialize Git configurations. -*- lexical-binding: t -*
 
 ;; Copyright (c) 2021 Alexander Kurbatov
 ;;

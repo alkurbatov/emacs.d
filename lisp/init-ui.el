@@ -1,4 +1,4 @@
-;; init-ui.el --- Better lookings and appearances.
+;; init-ui.el --- Better lookings and appearances. -*- lexical-binding: t -*
 
 ;; Copyright (c) 2021 Alexander Kurbatov
 ;;

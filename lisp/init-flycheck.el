@@ -1,4 +1,4 @@
-;; init-flycheck.el --- Initialize flycheck configurations.
+;; init-flycheck.el --- Initialize flycheck configurations. -*- lexical-binding: t -*
 
 ;; Copyright (c) 2021 Alexander Kurbatov
 ;;

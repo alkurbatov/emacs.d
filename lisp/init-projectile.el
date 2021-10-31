@@ -1,4 +1,4 @@
-;; init-projectile.el --- Initialize Projectile configurations.
+;; init-projectile.el --- Initialize Projectile configurations. -*- lexical-binding: t -*
 
 ;; Copyright (c) 2021 Alexander Kurbatov
 ;;

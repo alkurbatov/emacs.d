@@ -1,4 +1,4 @@
-;; init-c++.el --- Initialize C++ configurations.
+;; init-c++.el --- Initialize C++ configurations. -*- lexical-binding: t -*
 
 ;; Copyright (c) 2021 Alexander Kurbatov
 ;;

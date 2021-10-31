@@ -1,4 +1,4 @@
-;; init-help.el --- Initialize documentation and search configurations.
+;; init-help.el --- Initialize documentation and search configurations. -*- lexical-binding: t -*
 
 ;; Copyright (c) 2021 Alexander Kurbatov
 ;;

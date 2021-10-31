@@ -1,4 +1,4 @@
-;; init-vue.el --- Initialize VueJS configurations.
+;; init-vue.el --- Initialize VueJS configurations. -*- lexical-binding: t -*
 
 ;; Copyright (c) 2021 Alexander Kurbatov
 ;;

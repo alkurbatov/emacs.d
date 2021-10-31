@@ -1,4 +1,4 @@
-;; earlt-init.el --- Early stage initialisation routine.
+;; earlt-init.el --- Early stage initialisation routine. -*- lexical-binding: t -*
 
 ;; Copyright (c) 2021 Alexander Kurbatov
 ;;

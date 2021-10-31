@@ -1,4 +1,4 @@
-;; init-treeview.el --- Initialize tree view configurations.
+;; init-treeview.el --- Initialize tree view configurations. -*- lexical-binding: t -*
 
 ;; Copyright (c) 2021 Alexander Kurbatov
 ;;

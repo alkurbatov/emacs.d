@@ -1,4 +1,4 @@
-;; init-helm.el --- Initialize helm configurations.
+;; init-helm.el --- Initialize helm configurations. -*- lexical-binding: t -*
 
 ;; Copyright (c) 2021 Alexander Kurbatov
 ;;
