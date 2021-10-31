@@ -52,6 +52,15 @@
   (("M-g c" . avy-goto-char-in-line)
    ("M-g w" . avy-goto-word-1)))
 
+;; Join line to next line.
+(global-set-key (kbd "C-j")
+            (lambda ()
+                  (interactive)
+                  (join-line -1)))
+
+;; Join line to previous line.
+(global-set-key (kbd "M-j") 'join-line)
+
 (defun insert-date ()
   "Insert current date into the buffer."
   (interactive)
