@@ -42,7 +42,10 @@
   ([f10] . treemacs))
 
 (use-package treemacs-projectile
-  :after projectile)
+  :after (treemacs projectile))
+
+(use-package treemacs-magit
+  :after (treemacs magit))
 
 (provide 'init-treeview)
 
