@@ -66,7 +66,7 @@
     (modern-c++-font-lock-global-mode t))
 
   :custom
-  (setq c-basic-offset 4)
+  (c-basic-offset 4)
   (c-set-style "bsd"))
 
 (provide 'init-c++)
