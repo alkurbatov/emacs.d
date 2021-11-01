@@ -2,7 +2,7 @@
 # name: init-module
 # key: init-module
 # --
-;; init-${1:module}.el --- Initialize ${2:module} configurations.
+;; init-${1:module}.el --- Initialize ${2:module} configurations. -*- lexical-binding: t -*
 
 ;; Copyright (c) 2021 Alexander Kurbatov
 ;;
