@@ -43,6 +43,9 @@
   :init
   (setq powerline-default-separator 'arrow-fade)
 
+  :custom-face
+  (spaceline-python-venv ((t (:foreground "black"))))
+
   :config
   (require 'spaceline-config)
   (spaceline-spacemacs-theme)
