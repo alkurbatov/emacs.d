@@ -39,7 +39,15 @@
 ;; Do not initialise the package manager. This is done in `init.el'.
 (setq package-enable-at-startup nil)
 
+;; Disable handlers and checkers for the early init stage.
+(defvar file-name-handler-alist-original file-name-handler-alist)
+(setq file-name-handler-alist nil)
+
+;; Do not load customization files before early init. This is done in `init.el'.
+(setq site-run-file nil)
+
 ;; Faster to disable these here (before they've been initialized)
+(menu-bar-mode -1)
 (push '(menu-bar-lines . 0) default-frame-alist)
 (push '(tool-bar-lines . 0) default-frame-alist)
 (push '(vertical-scroll-bars) default-frame-alist)
