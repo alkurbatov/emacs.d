@@ -37,9 +37,6 @@
   :after projectile
 
   :config
-  (if (projectile-project-p)                    ; check if we are in a project
-      (setq elpy-rpc-virtualenv-path 'current)) ; use virtualenv of the current project
-
   (defalias 'workon 'pyvenv-workon)
 
   (when (load "flycheck" t t)
