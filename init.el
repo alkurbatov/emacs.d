@@ -38,6 +38,10 @@
 ;; Packages.
 (require 'init-package)
 
+;; Move Custom-Set-Variables to Different File, otherwise init.el will be used.
+(setq custom-file "~/.emacs.d/custom-set-variables.el")
+(load custom-file 'noerror)
+
 ;; General settings.
 (require 'init-basic)
 (require 'init-edit)
