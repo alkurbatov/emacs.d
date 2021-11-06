@@ -49,7 +49,10 @@
   :ensure nil
 
   :init
-  (elpy-enable))
+  (elpy-enable)
+
+  :config
+  (setq python-indent-guess-indent-offset-verbose nil))
 
 (provide 'init-python)
 
