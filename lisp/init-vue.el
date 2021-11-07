@@ -38,19 +38,26 @@
 (use-package vue-mode
   :after flycheck
 
+  :mode "\\.vue\\'"
+  :commands (vue-mode)
+
   :init
   (setq-default indent-tabs-mode nil)
 
   :config
   (use-package add-node-modules-path)
-  (add-node-modules-path)
-
-  :custom
-  (setq js-indent-level 2)
-  (setq vue-html-tab-width 2)
-  (setq css-indent-offset 2)
+  (use-package prettier
+    :diminish)
 
   (flycheck-add-mode 'javascript-eslint 'vue-mode) ; enable linter
+
+  :hook
+  (vue-mode . add-node-modules-path)
+
+  :custom
+  (js-indent-level 2)
+  (vue-html-tab-width 2)
+  (css-indent-offset 2)
 
   :custom-face
   (mmm-default-submode-face ((t (:background nil)))))
