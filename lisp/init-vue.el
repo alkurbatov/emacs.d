@@ -49,7 +49,9 @@
   (use-package prettier
     :diminish)
 
-  (flycheck-add-mode 'javascript-eslint 'vue-mode) ; enable linter
+  ;; Enable linter.
+  (flycheck-add-mode 'javascript-eslint 'vue-mode)
+  (flycheck-add-mode 'javascript-eslint 'vue-html-mode)
 
   :hook
   (vue-mode . add-node-modules-path)
