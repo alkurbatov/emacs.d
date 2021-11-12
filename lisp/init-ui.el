@@ -72,6 +72,17 @@
       (minor-modes :when active
                    :priority 9))))
 
+(use-package hl-todo
+  :hook (prog-mode . hl-todo-mode)
+  :config
+  (setq hl-todo-highlight-punctuation ":"
+        hl-todo-keyword-faces
+        `(("TODO"       warning bold)
+          ("FIXME"      error bold)
+          ("NB"         success bold)
+          ("NOTE"       success bold)
+          ("DEPRECATED" font-lock-doc-face bold))))
+
 ;; Always show line numbers.
 (global-display-line-numbers-mode t)
 (setq display-line-numbers "%4d \u2502 ")
