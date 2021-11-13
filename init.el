@@ -63,7 +63,6 @@
 (require 'init-c++)
 (require 'init-jinja2)
 (require 'init-js)
-(require 'init-json)
 (require 'init-markdown)
 (require 'init-ps1)
 (require 'init-python)

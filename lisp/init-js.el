@@ -33,6 +33,13 @@
 
 ;;; Code:
 
+(use-package json-mode
+  :init
+  (setq-default indent-tabs-mode nil)
+
+  :config
+  (setq js-indent-level 2))
+
 (use-package js2-mode
   :after flycheck
 
