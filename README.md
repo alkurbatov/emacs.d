@@ -5,6 +5,10 @@ Only OS X and Windows supported.
 ## Installation
 Run `install.sh` to install the configuration files on local machine.
 
+## Documentation
+* [use-package syntax and available options](https://github.com/jwiegley/use-package)
+* [modeline customization with spaceline](https://github.com/TheBB/spaceline)
+
 ## License
 Copyright (c) 2021 Alexander Kurbatov
 
