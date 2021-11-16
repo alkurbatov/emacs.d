@@ -53,6 +53,9 @@
   (flycheck-add-mode 'javascript-eslint 'vue-mode)
   (flycheck-add-mode 'javascript-eslint 'vue-html-mode)
 
+  ;; Enable Vue syntax support in prettier.
+  (setq prettier-js-args '("--parser vue"))
+
   :hook
   (vue-mode . add-node-modules-path)
 
