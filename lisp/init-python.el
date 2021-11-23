@@ -36,6 +36,8 @@
 (use-package elpy
   :after projectile
 
+  :diminish
+
   :config
   (defalias 'workon 'pyvenv-workon)
 
