@@ -1,7 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-set -eux
-
+set -euxo pipefail
 
 # Settings.
 EMACS_HOME=~/.emacs.d
