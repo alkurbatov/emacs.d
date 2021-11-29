@@ -1,4 +1,4 @@
-;; init.el --- Main initialisation routine. -*- lexical-binding: t -*
+;; init-docker.el --- Initialize Docker configurations. -*- lexical-binding: t -*
 
 ;; Copyright (c) 2021 Alexander Kurbatov
 ;;
@@ -28,50 +28,16 @@
 
 ;;; Commentary:
 ;;
-;; A Fancy Emacs Configuration.
+;; Docker configuration.
 ;;
 
 ;;; Code:
 
-(add-to-list 'load-path "~/.emacs.d/lisp/")
+(provide 'init-docker)
 
-;; Packages.
-(require 'init-package)
+(use-package dockerfile-mode)
 
-;; Move Custom-Set-Variables to Different File, otherwise init.el will be used.
-(setq custom-file "~/.emacs.d/custom-set-variables.el")
-(load custom-file 'noerror)
-
-;; General settings.
-(require 'init-basic)
-(require 'init-edit)
-(require 'init-helm)
-(require 'init-treeview)
-(require 'init-ui)
-
-;; Programming.
-(require 'init-flycheck)
-(require 'init-git)
-(require 'init-help)
-(require 'init-projectile)
-(require 'init-yasnippet)
-
-;; Tooling
-(require 'init-docker)
-(require 'init-terminal)
-
-;; Languages.
-(require 'init-bash)
-(require 'init-c++)
-(require 'init-jinja2)
-(require 'init-js)
-(require 'init-lisp)
-(require 'init-markdown)
-(require 'init-ps1)
-(require 'init-python)
-(require 'init-r)
-(require 'init-vue)
-(require 'init-yaml)
+(use-package docker-compose-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; init.el ends here
+;;; init-docker.el ends here
