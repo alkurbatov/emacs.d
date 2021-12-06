@@ -52,9 +52,14 @@
   (("M-g c" . avy-goto-char-in-line)
    ("M-g w" . avy-goto-word-1)))
 
+(global-set-key (kbd "C-x O")
+                (lambda ()
+                  (interactive)
+                  (other-window -1)))
+
 ;; Join line to next line.
 (global-set-key (kbd "C-j")
-            (lambda ()
+                (lambda ()
                   (interactive)
                   (join-line -1)))
 
