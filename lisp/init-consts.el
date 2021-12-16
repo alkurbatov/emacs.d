@@ -1,4 +1,4 @@
-;; init-basic.el --- Better default configurations. -*- lexical-binding: t -*
+;; init-consts.el --- Define constants. -*- lexical-binding: t -*
 
 ;; Copyright (c) 2021 Alexander Kurbatov
 ;;
@@ -28,40 +28,20 @@
 
 ;;; Commentary:
 ;;
-;; Better defaults.
+;; Define constants
 ;;
 
 ;;; Code:
-(require 'init-consts)
 
-;; Backups.
-(setq backup-directory-alist '(("." . "~/.emacs.d/backups/")))
-(setq auto-save-file-name-transforms `((".*" ,"~/.emacs.d/backups/" t)))
+(defconst sys/macp
+  (eq system-type 'darwin)
+  "Are we running on a Mac system?")
 
-(fset 'yes-or-no-p 'y-or-n-p) ; answer y or n instead of yes or no
+(defconst sys/mac-x-p
+  (and (display-graphic-p) sys/macp)
+  "Are we running under X on a Mac system?")
 
-;; Buffers.
-(kill-buffer "*scratch*") ; usually not used
-
-;; Calendar.
-(setq calendar-week-start-day 1)     ; start week from Monday
-(setq calendar-date-style 'european) ; use the DD/MM/YYYY format for the diary dates
-
-;; Start in fullscreen.
-(add-to-list 'default-frame-alist '(fullscreen . maximized))
-
-;; Inject paths to brew programs when Emacs is started from Spotlight.
-(when sys/mac-x-p
-  (use-package exec-path-from-shell
-    :init
-    (setq exec-path-from-shell-variables '("PATH" "MANPATH")
-          exec-path-from-shell-arguments '("-l"))
-    (exec-path-from-shell-initialize)))
-
-;; Mouse.
-(xterm-mouse-mode t) ; enable basic mouse support to prevent scrolling issues etc
-
-(provide 'init-basic)
+(provide 'init-consts)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; init-basic.el ends here
+;;; init-consts.el ends here
