@@ -37,6 +37,8 @@
   :init
   (load-theme 'tango-2 t))
 
+(set-frame-font "JetBrains Mono 14" nil t)
+
 (use-package spaceline
   :demand t
 
