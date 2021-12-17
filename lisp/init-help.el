@@ -32,6 +32,7 @@
 ;;
 
 ;;; Code:
+(require 'init-consts)
 
 ;; Show nice-looking embedded help.
 (use-package helpful
@@ -44,6 +45,8 @@
    ("C-h C"   . helpful-command)))
 
 (use-package engine-mode
+  :if sys/mac-x-p
+
   :config
   (engine-mode t)
 

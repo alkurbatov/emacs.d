@@ -32,12 +32,14 @@
 ;;
 
 ;;; Code:
+(require 'init-consts)
 
 (use-package tango-2-theme
   :init
   (load-theme 'tango-2 t))
 
-(set-frame-font "JetBrains Mono 14" nil t)
+(when sys/mac-x-p
+  (set-frame-font "JetBrains Mono 14" nil t))
 
 (use-package spaceline
   :demand t
