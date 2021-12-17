@@ -66,6 +66,9 @@
 ;; Join line to previous line.
 (global-set-key (kbd "M-j") 'join-line)
 
+;; Undo without necessity to press Shift.
+(global-set-key (kbd "C--") 'undo)
+
 (defun insert-date ()
   "Insert current date into the buffer."
   (interactive)
