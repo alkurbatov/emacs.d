@@ -1,4 +1,4 @@
-;; init.el --- Main initialisation routine. -*- lexical-binding: t -*
+;; init-org.el --- Initialize Org mode configurations. -*- lexical-binding: t -*
 
 ;; Copyright (c) 2021 Alexander Kurbatov
 ;;
@@ -28,51 +28,22 @@
 
 ;;; Commentary:
 ;;
-;; A Fancy Emacs Configuration.
+;; Org mode configuration.
 ;;
 
 ;;; Code:
 
-(add-to-list 'load-path "~/.emacs.d/lisp/")
+(provide 'init-org)
 
-;; Packages.
-(require 'init-package)
+(use-package org
+  :ensure nil
 
-;; Move Custom-Set-Variables to Different File, otherwise init.el will be used.
-(setq custom-file "~/.emacs.d/custom-set-variables.el")
-(load custom-file 'noerror)
+  :config
+  ;; Add current time when marking item as 'done'.
+  (setq org-log-done 'time)
 
-;; General settings.
-(require 'init-basic)
-(require 'init-edit)
-(require 'init-helm)
-(require 'init-treeview)
-(require 'init-ui)
-
-;; Programming.
-(require 'init-flycheck)
-(require 'init-git)
-(require 'init-help)
-(require 'init-projectile)
-(require 'init-yasnippet)
-
-;; Tooling
-(require 'init-docker)
-(require 'init-org)
-(require 'init-terminal)
-
-;; Languages.
-(require 'init-bash)
-(require 'init-c++)
-(require 'init-jinja2)
-(require 'init-js)
-(require 'init-lisp)
-(require 'init-markdown)
-(require 'init-ps1)
-(require 'init-python)
-(require 'init-r)
-(require 'init-vue)
-(require 'init-yaml)
+  :bind
+  ("C-c a" . org-agenda))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; init.el ends here
+;;; init-org.el ends here
