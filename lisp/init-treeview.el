@@ -47,6 +47,9 @@
 (use-package treemacs-magit
   :after (treemacs magit))
 
+(use-package lsp-treemacs
+  :after (treemacs lsp))
+
 (provide 'init-treeview)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

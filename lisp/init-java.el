@@ -1,4 +1,4 @@
-;; init.el --- Main initialisation routine. -*- lexical-binding: t -*
+;; init-java.el --- Initialize Java configurations. -*- lexical-binding: t -*
 
 ;; Copyright (c) 2021 Alexander Kurbatov
 ;;
@@ -28,52 +28,24 @@
 
 ;;; Commentary:
 ;;
-;; A Fancy Emacs Configuration.
+;; Java configuration.
 ;;
 
 ;;; Code:
 
-(add-to-list 'load-path "~/.emacs.d/lisp/")
+(use-package lsp-java
+  :hook (java-mode . lsp-deferred))
 
-;; Packages.
-(require 'init-package)
+(use-package lsp-metals
+  :hook (scala-mode . lsp--deferred)
 
-;; Move Custom-Set-Variables to Different File, otherwise init.el will be used.
-(setq custom-file "~/.emacs.d/custom-set-variables.el")
-(load custom-file 'noerror)
+  :custom
+  ;; Metals claims to support range formatting by default but it supports range
+  ;; formatting of multiline strings only. You might want to disable it so that
+  ;; emacs can use indentation provided by scala-mode.
+  (lsp-metals-server-args '("-J-Dmetals.allow-multiline-string-formatting=off")))
 
-;; General settings.
-(require 'init-basic)
-(require 'init-edit)
-(require 'init-helm)
-(require 'init-treeview)
-(require 'init-ui)
-
-;; Programming.
-(require 'init-flycheck)
-(require 'init-git)
-(require 'init-help)
-(require 'init-java)
-(require 'init-projectile)
-(require 'init-yasnippet)
-
-;; Tooling
-(require 'init-docker)
-(require 'init-org)
-(require 'init-terminal)
-
-;; Languages.
-(require 'init-bash)
-(require 'init-c++)
-(require 'init-jinja2)
-(require 'init-js)
-(require 'init-lisp)
-(require 'init-markdown)
-(require 'init-ps1)
-(require 'init-python)
-(require 'init-r)
-(require 'init-vue)
-(require 'init-yaml)
+(provide 'init-java)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; init.el ends here
+;;; init-java.el ends here
