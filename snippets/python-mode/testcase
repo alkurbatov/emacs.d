@@ -1,0 +1,6 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: testcase
+# key: testcase
+# --
+class Test${1:Class}(unittest.TestCase):
+    ${2:pass}
