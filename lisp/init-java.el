@@ -37,7 +37,7 @@
   :hook (java-mode . lsp-deferred))
 
 (use-package lsp-metals
-  :hook (scala-mode . lsp--deferred)
+  :hook (scala-mode . lsp-deferred)
 
   :custom
   ;; Metals claims to support range formatting by default but it supports range
