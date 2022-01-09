@@ -1,4 +1,4 @@
-;; init-helm.el --- Initialize helm configurations. -*- lexical-binding: t -*
+;; init-prog.el --- Initialize common programming configurations. -*- lexical-binding: t -*
 
 ;; Copyright (c) 2021 Alexander Kurbatov
 ;;
@@ -28,29 +28,33 @@
 
 ;;; Commentary:
 ;;
-;; Helm configurations.
+;; Common programming configuration.
 ;;
 
 ;;; Code:
 
-(use-package helm
+(use-package lsp-mode
   :diminish
 
+  :custom
+  (lsp-auto-guess-root +1)
+
   :config
-  (helm-mode 1)
+  (setq lsp-prefer-flymake nil)
+  (setq lsp-headerline-breadcrumb-enable t)
 
-  (use-package ag)
-  (use-package helm-ag)
-  (use-package helm-projectile)
-  (use-package helm-lsp
-    :commands helm-lsp-workspace-symbol)
+  (use-package lsp-ui
+    :commands lsp-ui-mode)
 
-  :bind
-  (("C-x b" . helm-mini)
-   ("C-x r b" .  helm-filtered-bookmarks)
-   ("M-x" . helm-M-x)))
+  :hook
+  ((java-mode . lsp-deferred)
+   (python-mode . lsp-deferred)
+   (scala-mode . lsp-deferred))
 
-(provide 'init-helm)
+  :commands
+  (lsp lsp-deferred))
+
+(provide 'init-prog)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; init-helm.el ends here
+;;; init-prog.el ends here

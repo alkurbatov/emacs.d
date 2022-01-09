@@ -35,20 +35,15 @@
 
 (use-package treemacs
   :config
-  (treemacs-project-follow-mode t)
-  (treemacs-display-current-project-exclusively)
+  (use-package treemacs-projectile)
+  (use-package treemacs-magit)
+
+  (use-package lsp-treemacs
+    :config
+    (lsp-treemacs-sync-mode 1))
 
   :bind
   ([f10] . treemacs))
-
-(use-package treemacs-projectile
-  :after (treemacs projectile))
-
-(use-package treemacs-magit
-  :after (treemacs magit))
-
-(use-package lsp-treemacs
-  :after (treemacs lsp))
 
 (provide 'init-treeview)
 

@@ -33,25 +33,25 @@
 
 ;;; Code:
 
-(use-package elpy
-  :after projectile
-
-  :diminish
-
+(use-package poetry
   :config
-  (defalias 'workon 'pyvenv-workon)
+  (setq poetry-tracking-strategy 'projectile)
 
-  (when (load "flycheck" t t)
-    (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
-    (add-hook 'elpy-mode-hook 'flycheck-mode))
+  :hook
+  (python-mode . poetry-tracking-mode))
 
-  (use-package blacken))
+(use-package lsp-pyright
+  :after poetry
+
+  :hook
+  (python-mode . (lambda ()
+                   (require 'lsp-pyright)
+                   (lsp-deferred))))
+
+(use-package python-black)
 
 (use-package python
   :ensure nil
-
-  :init
-  (elpy-enable)
 
   :config
   (setq python-indent-guess-indent-offset-verbose nil))

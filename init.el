@@ -45,16 +45,17 @@
 ;; General settings.
 (require 'init-basic)
 (require 'init-edit)
-(require 'init-helm)
-(require 'init-treeview)
 (require 'init-ui)
 
 ;; Programming.
-(require 'init-flycheck)
+(require 'init-prog)
 (require 'init-git)
+(require 'init-projectile)
+(require 'init-helm)
+(require 'init-flycheck)
 (require 'init-help)
 (require 'init-java)
-(require 'init-projectile)
+(require 'init-treeview)
 (require 'init-yasnippet)
 
 ;; Tooling
