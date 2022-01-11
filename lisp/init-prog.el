@@ -47,7 +47,8 @@
     :commands lsp-ui-mode)
 
   :hook
-  ((java-mode . lsp-deferred)
+  ((c++-mode . lsp-deferred)
+   (java-mode . lsp-deferred)
    (python-mode . lsp-deferred)
    (scala-mode . lsp-deferred))
 

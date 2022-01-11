@@ -36,27 +36,11 @@
 (use-package cc-mode
   :ensure nil
 
-  :after flycheck
-
   :init
   (setq-default indent-tabs-mode nil)
   (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode)) ; force C++ mode for all headers
 
   :config
-  (setq flycheck-cppcheck-standards "c++17")
-  (setq flycheck-clang-language-standard "c++17")
-  (setq flycheck-gcc-language-standard "c++17")
-
-  ;; Setup flycheck.
-  ;; Do C-c ! s for manual selection of a checker.
-  ;; Do C-c ! v to verify which checkers used and in which order.
-  (add-to-list 'flycheck-checkers 'c/c++-clang)
-  (add-to-list 'flycheck-checkers 'c/c++-gcc)
-  (add-to-list 'flycheck-checkers 'c/c++-cppcheck)
-
-  ;; Default include paths.
-  (setq flycheck-clang-include-path (list "/opt/local/include"))
-
   (use-package cmake-font-lock)
 
   (use-package modern-cpp-font-lock
@@ -64,6 +48,13 @@
 
     :init
     (modern-c++-font-lock-global-mode t))
+
+    (setq lsp-clients-clangd-args '("-j=4"
+                                    "--background-index"
+                                    "--clang-tidy"
+                                    "--completion-style=detailed"
+                                    "--header-insertion=never"
+                                    "--header-insertion-decorators=0"))
 
   :custom
   (c-basic-offset 4)
