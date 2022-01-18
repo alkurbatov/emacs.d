@@ -33,6 +33,14 @@
 
 ;;; Code:
 
+(use-package company
+  :diminish
+
+  :init
+  (setq company-idle-delay 0)
+
+  :hook (after-init . global-company-mode))
+
 (use-package lsp-mode
   :diminish
 
