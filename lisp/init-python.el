@@ -48,12 +48,12 @@
                    (require 'lsp-pyright)
                    (lsp-deferred))))
 
-(use-package python-black)
-
 (use-package python
   :ensure nil
 
   :config
+  (use-package python-black)
+
   (setq python-indent-guess-indent-offset-verbose nil))
 
 (provide 'init-python)
