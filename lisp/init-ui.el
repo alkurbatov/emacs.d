@@ -34,9 +34,9 @@
 ;;; Code:
 (require 'init-consts)
 
-(use-package tango-2-theme
+(use-package monokai-theme
   :init
-  (load-theme 'tango-2 t))
+  (load-theme 'monokai t))
 
 (when sys/mac-x-p
   (set-frame-font "JetBrains Mono 14" nil t))
@@ -48,7 +48,7 @@
   (setq powerline-default-separator 'arrow-fade)
 
   :custom-face
-  (spaceline-python-venv ((t (:foreground "black"))))
+  (spaceline-python-venv ((t (:foreground "color-166"))))
 
   :config
   (require 'spaceline-config)
