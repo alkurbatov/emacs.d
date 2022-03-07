@@ -2,9 +2,9 @@
 # name: init-module
 # key: init-module
 # --
-;; init-${1:module}.el --- Initialize ${2:module} configurations. -*- lexical-binding: t -*
+;; init-${1:module}.el --- Initialize ${2:Module} configurations. -*- lexical-binding: t -*
 
-;; Copyright (c) 2021 Alexander Kurbatov
+;; Copyright (c) 2022 Alexander Kurbatov
 ;;
 ;; Author: Alexander.Kurbatov <sandro.kurbatov@gmail.com>
 ;; URL: https://github.com/alkurbatov/emacs.d
@@ -32,12 +32,13 @@
 
 ;;; Commentary:
 ;;
-;; ${4:Module} configuration.
+;; ${3:$$(yas-field-value 2)} configuration.
 ;;
 
 ;;; Code:
+${6:}
 
-(provide 'init-${5:module})
+(provide 'init-${4:$$(yas-field-value 1)})
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; init-${6:module}.el ends here
+;;; init-${5:$$(yas-field-value 1)}.el ends here
