@@ -1,4 +1,4 @@
-;; init-org.el --- Initialize Org mode configurations. -*- lexical-binding: t -*
+;; init-custom.el --- Initialize custom configurations. -*- lexical-binding: t -*
 
 ;; Copyright (c) 2021 Alexander Kurbatov
 ;;
@@ -28,29 +28,20 @@
 
 ;;; Commentary:
 ;;
-;; Org mode configuration.
+;; Custom configuration.
 ;;
 
 ;;; Code:
-(require 'init-custom)
 
-(use-package org
-  :ensure nil
+(defcustom alk/org-directory (expand-file-name "~/Yandex.Disk.localized/org/")
+  "Set org directory."
+  :type 'string)
 
-  :config
-  ;; Load org files with tasks.
-  (setq org-agenda-files `(,alk/org-directory))
-  (nconc org-agenda-files (directory-files-recursively alk/org-projects "\\.org$"))
+(defcustom alk/org-projects (expand-file-name "~/Yandex.Disk.localized/org/Проекты")
+  "Set org projects folder."
+  :type 'string)
 
-  ;; Add current time when marking item as 'done'.
-  (setq org-log-done 'time)
-
-  :bind
-  (("C-c a" . org-agenda)
-   ("C-c c" . org-capture)
-   ("C-c l" . org-store-link)))
-
-(provide 'init-org)
+(provide 'init-custom)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; init-org.el ends here
+;;; init-custom.el ends here

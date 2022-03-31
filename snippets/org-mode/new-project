@@ -1,0 +1,17 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: new-project
+# key: new-project
+# --
+* ${1:`(substring (buffer-name) 0 -4)`}
+
+** Цель проекта
+
+
+** Результат проекта
+
+
+** Задачи
+*** TODO ${2}
+
+
+** Идеи
