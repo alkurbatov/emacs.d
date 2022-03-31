@@ -40,9 +40,12 @@
   (flycheck-error ((t (:background "color-52" :underline nil))))
   (flycheck-warning ((t (:background "color-58" :underline nil))))
 
-  :config
-  (use-package flycheck-popup-tip
-    :hook (flycheck-mode . flycheck-popup-tip-mode))
+;; FIXME (alkurbatov): Enable when flycheck-popup-tip fixes
+;; conflict with lsp-mode.
+;;
+;;  :config
+;;  (use-package flycheck-popup-tip
+;;    :hook (flycheck-mode . flycheck-popup-tip-mode))
 
   :hook
   (after-init . global-flycheck-mode))
