@@ -38,7 +38,7 @@
   :init
   (load-theme 'monokai t))
 
-(when sys/mac-x-p
+(when (display-graphic-p)
   (set-frame-font "JetBrains Mono 14" nil t))
 
 (use-package spaceline

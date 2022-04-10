@@ -45,9 +45,10 @@
    ("C-h C"   . helpful-command)))
 
 (use-package engine-mode
-  :if sys/mac-x-p
+  :if (display-graphic-p)
 
   :config
+  ;; Binded to 'C-x /' by default
   (engine-mode t)
 
   (defengine google
