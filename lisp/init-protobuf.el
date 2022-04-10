@@ -1,6 +1,6 @@
-;; init.el --- Main initialisation routine. -*- lexical-binding: t -*
+;; init-protobuf.el --- Initialize Protobuf configurations. -*- lexical-binding: t -*
 
-;; Copyright (c) 2021 Alexander Kurbatov
+;; Copyright (c) 2022 Alexander Kurbatov
 ;;
 ;; Author: Alexander.Kurbatov <sandro.kurbatov@gmail.com>
 ;; URL: https://github.com/alkurbatov/emacs.d
@@ -28,54 +28,13 @@
 
 ;;; Commentary:
 ;;
-;; A Fancy Emacs Configuration.
+;; Protobuf configuration.
 ;;
 
 ;;; Code:
+(use-package protobuf-mode)
 
-(add-to-list 'load-path "~/.emacs.d/lisp/")
-
-;; Packages.
-(require 'init-package)
-
-;; Move Custom-Set-Variables to Different File, otherwise init.el will be used.
-(setq custom-file "~/.emacs.d/custom-set-variables.el")
-(load custom-file 'noerror)
-
-;; General settings.
-(require 'init-basic)
-(require 'init-edit)
-(require 'init-ui)
-
-;; Programming.
-(require 'init-prog)
-(require 'init-git)
-(require 'init-projectile)
-(require 'init-helm)
-(require 'init-flycheck)
-(require 'init-help)
-(require 'init-treeview)
-(require 'init-yasnippet)
-
-;; Tooling
-(require 'init-docker)
-(require 'init-org)
-(require 'init-terminal)
-
-;; Languages.
-(require 'init-bash)
-(require 'init-c++)
-(require 'init-java)
-(require 'init-jinja2)
-(require 'init-js)
-(require 'init-lisp)
-(require 'init-markdown)
-(require 'init-protobuf)
-(require 'init-ps1)
-(require 'init-python)
-(require 'init-r)
-(require 'init-vue)
-(require 'init-yaml)
+(provide 'init-protobuf)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; init.el ends here
+;;; init-.el ends here
