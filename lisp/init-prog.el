@@ -32,6 +32,7 @@
 ;;
 
 ;;; Code:
+(require 'init-custom)
 
 (use-package company
   :diminish
@@ -57,7 +58,6 @@
   :hook
   ((c++-mode . lsp-deferred)
    (java-mode . lsp-deferred)
-   (python-mode . lsp-deferred)
    (scala-mode . lsp-deferred))
 
   :commands

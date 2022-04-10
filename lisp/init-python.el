@@ -32,6 +32,7 @@
 ;;
 
 ;;; Code:
+(require 'init-custom)
 
 (use-package poetry
   :config
@@ -41,12 +42,7 @@
   (python-mode . poetry-tracking-mode))
 
 (use-package lsp-pyright
-  :after poetry
-
-  :hook
-  (python-mode . (lambda ()
-                   (require 'lsp-pyright)
-                   (lsp-deferred))))
+  :after poetry)
 
 (use-package python
   :ensure nil
@@ -55,7 +51,11 @@
   (use-package python-black)
   (use-package py-isort)
 
-  (setq python-indent-guess-indent-offset-verbose nil))
+  (setq python-indent-guess-indent-offset-verbose nil)
+
+  (when alk/use-python-lsp
+    (require 'lsp-pyright)
+    (lsp-deferred)))
 
 (provide 'init-python)
 

@@ -41,6 +41,10 @@
   "Set org projects folder."
   :type 'string)
 
+(defcustom alk/use-python-lsp nil
+  "Enable LSP mode for Python"
+  :type 'boolean)
+
 (provide 'init-custom)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

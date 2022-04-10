@@ -32,6 +32,7 @@
 ;;
 
 ;;; Code:
+(require 'init-custom)
 
 (use-package flycheck
   :diminish
@@ -40,12 +41,11 @@
   (flycheck-error ((t (:background "color-52" :underline nil))))
   (flycheck-warning ((t (:background "color-58" :underline nil))))
 
-;; FIXME (alkurbatov): Enable when flycheck-popup-tip fixes
-;; conflict with lsp-mode.
-;;
-;;  :config
-;;  (use-package flycheck-popup-tip
-;;    :hook (flycheck-mode . flycheck-popup-tip-mode))
+  :config
+  (use-package flycheck-popup-tip
+    :if (not alk/use-python-lsp)  ;; conflicts with lsp-mode
+
+    :hook (flycheck-mode . flycheck-popup-tip-mode))
 
   :hook
   (after-init . global-flycheck-mode))
