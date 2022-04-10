@@ -45,6 +45,14 @@
   ;; Add current time when marking item as 'done'.
   (setq org-log-done 'time)
 
+  ;; Languages support for code blocks.
+  (defvar load-language-list '((emacs-lisp . t)
+                               (js . t)
+                               (python . t)
+                               (shell . t)))
+  (org-babel-do-load-languages 'org-babel-load-languages
+                               load-language-list)
+
   :bind
   (("C-c a" . org-agenda)
    ("C-c c" . org-capture)
