@@ -45,7 +45,9 @@
   (setq-default show-trailing-whitespace t)
 
   :hook
-  (prog-mode . ws-butler-mode)) ; do not enable in text-mode to avoid trimming in markdown files
+  ((prog-mode . ws-butler-mode)
+   (org-mode . ws-butler-mode))) ; do not enable in text-mode to avoid trimming in markdown files
+
 
 (use-package avy
   :bind
