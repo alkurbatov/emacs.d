@@ -50,6 +50,7 @@
   :config
   (use-package python-black)
   (use-package py-isort)
+  (use-package py-autopep8)
 
   (setq python-indent-guess-indent-offset-verbose nil)
 
