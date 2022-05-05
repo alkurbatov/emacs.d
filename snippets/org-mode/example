@@ -1,0 +1,8 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: example
+# key: example
+# --
+#+NAME ${1:name}
+#+BEGIN_EXAMPLE $2
+$3
+#+END_EXAMPLE
