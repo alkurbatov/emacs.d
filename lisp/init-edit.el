@@ -33,6 +33,16 @@
 
 ;;; Code:
 
+;; Remember recently edited files.
+;; Use 'M-x recentf-open-file' to quickly switch to one of them.
+(recentf-mode 1)
+
+;; Remember the last place visited in a file
+(save-place-mode 1)
+
+;; Automatically revert buffers for changed files if they don't have unsaved changes.
+(global-auto-revert-mode 1)
+
 ;; Spellcheck.
 (setq ispell-program-name "aspell")
 (setq ispell-dictionary "american")
