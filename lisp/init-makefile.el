@@ -1,6 +1,6 @@
-;; init.el --- Main initialisation routine. -*- lexical-binding: t -*
+;; init-makefile.el --- Initialize Makefile configurations. -*- lexical-binding: t -*
 
-;; Copyright (c) 2021 Alexander Kurbatov
+;; Copyright (c) 2022 Alexander Kurbatov
 ;;
 ;; Author: Alexander.Kurbatov <sandro.kurbatov@gmail.com>
 ;; URL: https://github.com/alkurbatov/emacs.d
@@ -28,55 +28,20 @@
 
 ;;; Commentary:
 ;;
-;; A Fancy Emacs Configuration.
+;; Makefile configuration.
 ;;
 
 ;;; Code:
 
-(add-to-list 'load-path "~/.emacs.d/lisp/")
+(use-package makefile-mode
+  :ensure nil
 
-;; Packages.
-(require 'init-package)
+  :init
+  (setq-default indent-tabs-mode t)
 
-;; Move customization variables to a separate file, otherwise init.el will be used.
-(setq custom-file "~/.emacs.d/custom-set-variables.el")
-(load custom-file 'noerror 'nomessage)
+  :hook
+  (makefile-mode . whitespace-mode))
 
-;; General settings.
-(require 'init-basic)
-(require 'init-edit)
-(require 'init-ui)
-
-;; Programming.
-(require 'init-prog)
-(require 'init-git)
-(require 'init-projectile)
-(require 'init-helm)
-(require 'init-flycheck)
-(require 'init-help)
-(require 'init-treeview)
-(require 'init-yasnippet)
-
-;; Tooling
-(require 'init-docker)
-(require 'init-makefile)
-(require 'init-org)
-(require 'init-terminal)
-
-;; Languages.
-(require 'init-bash)
-(require 'init-c++)
-(require 'init-java)
-(require 'init-jinja2)
-(require 'init-js)
-(require 'init-lisp)
-(require 'init-markdown)
-(require 'init-protobuf)
-(require 'init-ps1)
-(require 'init-python)
-(require 'init-r)
-(require 'init-vue)
-(require 'init-yaml)
-
+(provide 'init-makefile)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; init.el ends here
+;;; init-makefile.el ends here
