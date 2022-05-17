@@ -33,6 +33,14 @@
 
 ;;; Code:
 
+;; Defer garbage collection further back in the startup process
+;; to make startup faster by reducing the frequency of garbage
+;; collection.  The default is 0.8MB. Measured in bytes.
+(setq gc-cons-threshold (* 50 1000 1000))
+
+;; Portion of heap used for allocation. Defaults to 0.1.
+(setq gc-cons-percentage 0.6)
+
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 
 ;; Packages.
@@ -77,6 +85,22 @@
 (require 'init-r)
 (require 'init-vue)
 (require 'init-yaml)
+
+;; Make gc pauses faster by decreasing the threshold.
+(setq gc-cons-threshold (* 2 1000 1000))
+
+;; Suppress message "For information about GNU Emacs...".
+;; By some reason work only when set in the main init.el.
+(setq inhibit-startup-echo-area-message "alkurbatov")
+
+;; Use a hook so the message doesn't get clobbered by other messages.
+(add-hook 'emacs-startup-hook
+          (lambda ()
+            (message "Emacs ready in %s with %d garbage collections."
+                     (format "%.2f seconds"
+                             (float-time
+                              (time-subtract after-init-time before-init-time)))
+                     gcs-done)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init.el ends here
