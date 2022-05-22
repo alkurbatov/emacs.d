@@ -34,6 +34,12 @@
 ;;; Code:
 (require 'init-custom)
 
+(defun org-insert-todo-item ()
+  "Insert TODO heading with 'created' timestamp as property."
+  (interactive)
+  (org-insert-todo-heading-respect-content nil)
+  (org-entry-put nil "CREATED" (format-time-string "[%Y-%m-%d]")))
+
 (use-package org
   :ensure nil
 
@@ -56,7 +62,8 @@
   :bind
   (("C-c a" . org-agenda)
    ("C-c c" . org-capture)
-   ("C-c l" . org-store-link)))
+   ("C-c l" . org-store-link)
+   ("C-c C-x t" . org-insert-todo-item)))
 
 (provide 'init-org)
 
