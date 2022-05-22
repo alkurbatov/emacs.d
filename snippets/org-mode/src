@@ -2,7 +2,7 @@
 # name: src
 # key: src
 # --
-#+NAME ${1:name}
-#+BEGIN_SRC $2
+#+name ${1:name}
+#+begin_src $2
 $3
-#+END_SRC
+#+end_src
