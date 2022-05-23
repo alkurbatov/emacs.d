@@ -48,6 +48,10 @@
   (setq org-agenda-files `(,alk/org-directory))
   (nconc org-agenda-files (directory-files-recursively alk/org-projects "\\.org$"))
 
+  ;; Show nice-looking symbols instead of asterisks.
+  (use-package org-superstar
+    :hook (org-mode . org-superstar-mode))
+
   ;; Add current time when marking item as 'done'.
   (setq org-log-done 'time)
 
