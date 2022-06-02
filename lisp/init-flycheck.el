@@ -38,8 +38,8 @@
   :diminish
 
   :custom-face
-  (flycheck-error ((t (:background "color-52" :underline nil))))
-  (flycheck-warning ((t (:background "color-58" :underline nil))))
+  (flycheck-error ((t (:background "firebrick" :underline nil))))
+  (flycheck-warning ((t (:background "goldenrod" :underline nil))))
 
   :config
   (use-package flycheck-popup-tip
