@@ -1,6 +1,6 @@
-;; init-flycheck.el --- Initialize flycheck configurations. -*- lexical-binding: t -*
+;; init-theme.el --- Initialize theme configurations. -*- lexical-binding: t -*
 
-;; Copyright (c) 2021 Alexander Kurbatov
+;; Copyright (c) 2022 Alexander Kurbatov
 ;;
 ;; Author: Alexander.Kurbatov <sandro.kurbatov@gmail.com>
 ;; URL: https://github.com/alkurbatov/emacs.d
@@ -28,25 +28,36 @@
 
 ;;; Commentary:
 ;;
-;; Flycheck configurations.
+;; Theme configuration.
 ;;
 
 ;;; Code:
-(require 'init-custom)
 
-(use-package flycheck
-  :diminish
+(use-package tango-2-theme
+  :init
+  (load-theme 'tango-2 t)
 
+  :custom-face
+  (flycheck-error ((t (:background "firebrick" :foreground "white" :underline nil))))
+  (flycheck-warning ((t (:background "darkgoldenrod" :foreground "white" :underline nil))))
+
+  (git-gutter:added ((t (:foreground "brightgreen" :background nil))))
+  (git-gutter:deleted ((t (:foreground "brightred" :background nil))))
+  (git-gutter:modified ((t (:foreground "brightyellow" :background nil)))))
+
+(use-package hl-todo
+  :hook (prog-mode . hl-todo-mode)
   :config
-  (use-package flycheck-popup-tip
-    :if (not alk/use-python-lsp)  ;; conflicts with lsp-mode
+  (setq hl-todo-highlight-punctuation ":"
+        hl-todo-keyword-faces
+        `(("TODO"       warning bold)
+          ("FIXME"      error bold)
+          ("NB"         success bold)
+          ("NOTE"       success bold)
+          ("DEPRECATED" font-lock-doc-face bold))))
 
-    :hook (flycheck-mode . flycheck-popup-tip-mode))
 
-  :hook
-  (after-init . global-flycheck-mode))
-
-(provide 'init-flycheck)
+(provide 'init-theme)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; init-flycheck.el ends here
+;;; init-theme.el ends here

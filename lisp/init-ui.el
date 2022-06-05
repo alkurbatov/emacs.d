@@ -34,10 +34,6 @@
 ;;; Code:
 (require 'init-consts)
 
-(use-package monokai-theme
-  :init
-  (load-theme 'monokai t))
-
 (when (display-graphic-p)
   (set-frame-font "JetBrains Mono 14" nil t))
 
@@ -46,9 +42,6 @@
 
   :init
   (setq powerline-default-separator 'arrow-fade)
-
-  :custom-face
-  (spaceline-python-venv ((t (:foreground "color-166"))))
 
   :config
   (require 'spaceline-config)
@@ -75,17 +68,6 @@
       (major-mode :priority 79)
       (minor-modes :when active
                    :priority 9))))
-
-(use-package hl-todo
-  :hook (prog-mode . hl-todo-mode)
-  :config
-  (setq hl-todo-highlight-punctuation ":"
-        hl-todo-keyword-faces
-        `(("TODO"       warning bold)
-          ("FIXME"      error bold)
-          ("NB"         success bold)
-          ("NOTE"       success bold)
-          ("DEPRECATED" font-lock-doc-face bold))))
 
 ;; Always show line numbers.
 (global-display-line-numbers-mode t)

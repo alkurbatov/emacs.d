@@ -48,12 +48,7 @@
   (git-gutter:update-interval 2)
   (git-gutter:modified-sign "•")
   (git-gutter:added-sign "•")
-  (git-gutter:deleted-sign "•")
-
-  :custom-face
-  (git-gutter:added ((t (:foreground "color-40" :background nil))))
-  (git-gutter:deleted ((t (:foreground "color-160" :background nil))))
-  (git-gutter:modified ((t (:foreground "color-178" :background nil)))))
+  (git-gutter:deleted-sign "•"))
 
 (provide 'init-git)
 

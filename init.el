@@ -54,6 +54,7 @@
 (require 'init-basic)
 (require 'init-edit)
 (require 'init-ui)
+(require 'init-theme)
 
 ;; Programming.
 (require 'init-prog)
