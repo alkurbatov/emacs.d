@@ -48,12 +48,26 @@
   (setq org-agenda-files `(,alk/org-directory))
   (nconc org-agenda-files (directory-files-recursively alk/org-projects "\\.org$"))
 
+  ;; Hide the emphasis markup (italics, bold, etc).
+  (setq org-hide-emphasis-markers t)
+
   ;; Show nice-looking symbols instead of asterisks.
   (use-package org-superstar
+    :config
+    ;; Hide leading dots.
+    (setq org-superstar-leading-bullet ?\s
+          org-superstar-leading-fallback ?\s
+          org-hide-leading-stars nil)
+
     :hook (org-mode . org-superstar-mode))
 
   ;; Add current time when marking item as 'done'.
   (setq org-log-done 'time)
+
+  ;; Better source code highlighting.
+  (setq org-confirm-babel-evaluate nil
+        org-src-fontify-natively t
+        org-src-tab-acts-natively t)
 
   ;; Languages support for code blocks.
   (defvar load-language-list '((emacs-lisp . t)
