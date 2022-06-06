@@ -48,7 +48,8 @@
   :ensure nil
 
   :config
-  (use-package python-black)
+  (use-package python-black
+    :diminish python-black-on-save-mode)
   (use-package py-isort)
   (use-package py-autopep8)
 
