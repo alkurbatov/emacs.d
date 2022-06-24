@@ -10,6 +10,6 @@ Run `install.sh` to install the configuration files on local machine.
 * [modeline customization with spaceline](https://github.com/TheBB/spaceline)
 
 ## License
-Copyright (c) 2021 Alexander Kurbatov
+Copyright (c) 2021-2022 Alexander Kurbatov
 
 Licensed under the [MIT license](LICENSE).
