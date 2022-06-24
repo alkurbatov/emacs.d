@@ -1,9 +1,0 @@
-# -*- mode: snippet; require-final-newline: nil -*-
-# name: copyright-acronis
-# key: copyright-acronis
-# --
-/**
-@brief    ${1:Purpose}.
-@details  Copyright (c) 2019 Acronis
-@author   Alexander Kurbatov (Alexander.Kurbatov@acronis.com)
-*/
