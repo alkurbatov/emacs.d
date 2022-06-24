@@ -53,6 +53,9 @@
 
   ;; Show nice-looking symbols instead of asterisks.
   (use-package org-superstar
+    :init
+    (setq org-superstar-headline-bullets-list '("❯" "❯❯" "❯❯❯" "❯❯❯❯" "❯❯❯❯❯"))
+
     :config
     ;; Hide leading dots.
     (setq org-superstar-leading-bullet ?\s
