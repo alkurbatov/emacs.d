@@ -47,6 +47,11 @@
 (setq ispell-program-name "aspell")
 (setq ispell-dictionary "american")
 
+(use-package flyspell
+  :ensure nil
+
+  :diminish)
+
 ;; Trim trailing whitespaces on changed lines.
 (use-package ws-butler
   :diminish
