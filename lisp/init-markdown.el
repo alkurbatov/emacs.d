@@ -37,7 +37,8 @@
   :mode
   (("README\\.md\\'" . gfm-mode)
    ("\\.md\\'" . markdown-mode)
-   ("\\.markdown\\'" . markdown-mode))
+   ("\\.markdown\\'" . markdown-mode)
+   ("\\.git/COMMIT_EDITMSG\\'" . markdown-mode))
 
   :init
   (setq markdown-command "multimarkdown")

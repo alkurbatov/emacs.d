@@ -34,6 +34,8 @@
 ;;; Code:
 
 (use-package magit
+  :hook (git-commit-setup . git-commit-turn-on-flyspell)
+
   :custom
   (git-commit-summary-max-length 50)
   (git-commit-fill-column 72))
