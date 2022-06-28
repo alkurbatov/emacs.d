@@ -1,6 +1,6 @@
-;; init-helm.el --- Initialize helm configurations. -*- lexical-binding: t -*
+;; init-ivy.el --- Initialize Ivy toolset configurations. -*- lexical-binding: t -*
 
-;; Copyright (c) 2021-2022 Alexander Kurbatov
+;; Copyright (c) 2022 Alexander Kurbatov
 ;;
 ;; Author: Alexander.Kurbatov <sandro.kurbatov@gmail.com>
 ;; URL: https://github.com/alkurbatov/emacs.d
@@ -28,29 +28,38 @@
 
 ;;; Commentary:
 ;;
-;; Helm configurations.
+;; Ivy toolset configuration.
 ;;
 
 ;;; Code:
 
-(use-package helm
+(use-package ivy
   :diminish
 
-  :config
-  (helm-mode 1)
+  :init
+  (ivy-mode 1)
 
-  (use-package ag)
-  (use-package helm-ag)
-  (use-package helm-projectile)
-  (use-package helm-lsp
-    :commands helm-lsp-workspace-symbol)
+  :config
+  (use-package counsel
+    :diminish
+
+    :init
+    (counsel-mode 1))
+
+  (use-package swiper)
+
+  (setq ivy-use-virtual-buffers t)
+  (setq ivy-count-format "(%d/%d) ")
+  (setq ivy-height 20)
 
   :bind
-  (("C-x b" . helm-mini)
-   ("C-x r b" .  helm-filtered-bookmarks)
-   ("M-x" . helm-M-x)))
+  (("C-s"    . swiper-isearch)
+   ("C-r"    . swiper-isearch-backward)
+   ("C-x b"  . ivy-switch-buffer)
+   ("C-c C-r". ivy-resume)
+  ))
 
-(provide 'init-helm)
+(provide 'init-ivy)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; init-helm.el ends here
+;;; init-ivy.el ends here

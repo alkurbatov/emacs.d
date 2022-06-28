@@ -60,7 +60,7 @@
 (require 'init-prog)
 (require 'init-git)
 (require 'init-projectile)
-(require 'init-helm)
+(require 'init-ivy)
 (require 'init-flycheck)
 (require 'init-help)
 (require 'init-treeview)

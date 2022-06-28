@@ -40,7 +40,6 @@
 
   :config
   (projectile-mode +1)
-  (helm-projectile-on)
 
   ;; Setup project types.
   (projectile-register-project-type 'npm '("package.json")
@@ -54,11 +53,10 @@
   ("C-x p" . projectile-command-map)
 
   :custom
-  (setq projectile-auto-discover nil)
-  (setq projectile-completion-system 'helm)
-  (setq projectile-enable-caching t)
-  (setq projectile-indexing-method 'hybrid)
-  (setq projectile-switch-project-action 'helm-projectile))
+  (projectile-auto-discover nil)
+  (projectile-completion-system 'ivy)
+  (projectile-enable-caching t)
+  (projectile-indexing-method 'hybrid))
 
 (provide 'init-projectile)
 
