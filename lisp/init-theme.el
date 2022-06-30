@@ -41,9 +41,9 @@
   (flycheck-error ((t (:background "firebrick" :foreground "white" :underline nil))))
   (flycheck-warning ((t (:background "darkgoldenrod" :foreground "white" :underline nil))))
 
-  (git-gutter:added ((t (:foreground "brightgreen" :background nil))))
-  (git-gutter:deleted ((t (:foreground "brightred" :background nil))))
-  (git-gutter:modified ((t (:foreground "brightyellow" :background nil)))))
+  (git-gutter:added ((t (:foreground "green1" :background nil))))
+  (git-gutter:deleted ((t (:foreground "red1" :background nil))))
+  (git-gutter:modified ((t (:foreground "yellow1" :background nil)))))
 
 (use-package hl-todo
   :hook (prog-mode . hl-todo-mode)
