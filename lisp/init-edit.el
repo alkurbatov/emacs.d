@@ -63,17 +63,18 @@
   ((prog-mode . ws-butler-mode)
    (org-mode . ws-butler-mode))) ; do not enable in text-mode to avoid trimming in markdown files
 
-(use-package undo-tree
-  ;; Detailed documentation available at:
-  ;; https://gitlab.com/tsc25/undo-tree/-/blob/master/undo-tree.el
-  :diminish
+(use-package vundo
+  :commands (vundo)
 
-  :init
-  (global-undo-tree-mode)
+  :config
+  ;; Take less on-screen space.
+  (setq vundo-compact-display t)
 
-  :custom
-  (undo-tree-auto-save-history t)
-  (undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo"))))
+  ;; Better contrasting highlight.
+  (custom-set-faces
+    '(vundo-node ((t (:foreground "#808080"))))
+    '(vundo-stem ((t (:foreground "#808080"))))
+    '(vundo-highlight ((t (:foreground "#FFFF00"))))))
 
 (use-package avy
   :bind
