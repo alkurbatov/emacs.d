@@ -64,6 +64,15 @@
 
     :hook (org-mode . org-superstar-mode))
 
+  ;; Enable nice indent.
+  (use-package org-indent
+    :ensure nil
+
+    :diminish
+
+    :hook
+    (org-mode . org-indent-mode))
+
   ;; Add current time when marking item as 'done'.
   (setq org-log-done 'time)
 
@@ -79,6 +88,10 @@
                                (shell . t)))
   (org-babel-do-load-languages 'org-babel-load-languages
                                load-language-list)
+
+  :hook
+  ;; Enable nice wrapping only in org-mode to avoid corrupting agenda.
+  (org-mode . visual-line-mode)
 
   :bind
   (("C-c a" . org-agenda)

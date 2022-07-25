@@ -75,8 +75,10 @@
 
 (column-number-mode 1) ; always show column number
 
-(diminish 'abbrev-mode) ; hide Abbrev mode
-(diminish 'eldoc-mode)  ; hide ElDoc mode in modeline
+;; Hide redundand minor modes.
+(diminish 'abbrev-mode)
+(diminish 'eldoc-mode)
+(diminish 'visual-line-mode)
 
 ;; Suppress redundand GUI features
 (setq use-file-dialog nil
