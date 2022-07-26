@@ -71,6 +71,7 @@
   (require 'use-package))
 
 ;; Required by 'use-package'.
+(use-package delight)
 (use-package diminish)
 (use-package bind-key)
 
