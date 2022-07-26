@@ -41,6 +41,9 @@
   (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode)) ; force C++ mode for all headers
 
   :config
+  ;; Hide annoying /l suffixes from modeline.
+  (advice-add 'c-update-modeline :override #'ignore)
+
   (use-package cmake-font-lock)
 
   (use-package modern-cpp-font-lock
