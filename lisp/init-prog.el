@@ -50,7 +50,10 @@
 
   :config
   (setq lsp-prefer-flymake nil)
-  (setq lsp-headerline-breadcrumb-enable t)
+  (setq lsp-headerline-breadcrumb-enable nil)
+
+  (use-package lsp-ivy
+    :commands lsp-ivy-workspace-symbol)
 
   (use-package lsp-ui
     :commands lsp-ui-mode)
