@@ -56,9 +56,7 @@
     :commands lsp-ui-mode)
 
   :hook
-  ((c++-mode . lsp-deferred)
-   (java-mode . lsp-deferred)
-   (scala-mode . lsp-deferred))
+  ((c++-mode java-mode scala-mode) . lsp-deferred)
 
   :commands
   (lsp lsp-deferred))
