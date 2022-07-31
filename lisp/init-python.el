@@ -41,9 +41,6 @@
   :hook
   (python-mode . poetry-tracking-mode))
 
-(use-package lsp-pyright
-  :after poetry)
-
 (use-package python
   :ensure nil
 
@@ -55,9 +52,11 @@
 
   (setq python-indent-guess-indent-offset-verbose nil)
 
-  (when alk/use-python-lsp
-    (require 'lsp-pyright)
-    (lsp-deferred)))
+  (setq lsp-pylsp-configuration-sources ["flake8"]
+        lsp-pylsp-plugins-flake8-enabled t
+        lsp-pylsp-plugins-mccabe-enabled nil
+        lsp-pylsp-plugins-pyflakes-enabled nil
+        lsp-pylsp-plugins-pycodestyle-enabled nil))
 
 (provide 'init-python)
 

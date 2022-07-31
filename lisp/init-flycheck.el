@@ -37,12 +37,6 @@
 (use-package flycheck
   :diminish
 
-  :config
-  (use-package flycheck-popup-tip
-    :if (not alk/use-python-lsp)  ;; conflicts with lsp-mode
-
-    :hook (flycheck-mode . flycheck-popup-tip-mode))
-
   :hook
   (after-init . global-flycheck-mode))
 
