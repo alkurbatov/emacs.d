@@ -55,7 +55,7 @@
   :custom
   (projectile-auto-discover nil)
   (projectile-completion-system 'ivy)
-  (projectile-enable-caching t)
+  (projectile-enable-caching nil)
   (projectile-indexing-method 'alien))
 
 (provide 'init-projectile)
