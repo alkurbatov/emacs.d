@@ -32,13 +32,31 @@
 ;;
 
 ;;; Code:
+(use-package web-mode
+  :after add-node-modules-path
+
+  :mode "\\.tsx\\'"
+
+  :config
+  (flycheck-add-mode 'typescript-tslint 'web-mode)
+
+  :hook
+  ((web-mode . add-node-modules-path)
+   (web-mode . (lambda ()
+                (when (string-equal "tsx" (file-name-extension buffer-file-name))
+                  (tide-setup)
+                  (tide-hl-identifier-mode))))))
+
 (use-package tide
   :diminish
 
-  :after (typescript-mode company flycheck)
+  :after (typescript-mode company flycheck add-node-modules-path)
 
-  :hook ((typescript-mode . tide-setup)
-         (typescript-mode . tide-hl-identifier-mode)))
+  :hook
+  ((typescript-mode . add-node-modules-path)
+   (typescript-mode . tide-setup)
+   (typescript-mode . tide-hl-identifier-mode)))
+
 
 (provide 'init-typescript)
 

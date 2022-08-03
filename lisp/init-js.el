@@ -32,6 +32,7 @@
 ;;
 
 ;;; Code:
+(use-package add-node-modules-path)
 
 (use-package json-mode
   :init
@@ -41,7 +42,7 @@
   (setq js-indent-level 2))
 
 (use-package js2-mode
-  :after flycheck
+  :after (flycheck add-node-modules-path)
 
   :mode "\\.js\\'"
   :interpreter "node"
@@ -50,7 +51,6 @@
   (setq-default indent-tabs-mode nil)
 
   :config
-  (use-package add-node-modules-path)
   (use-package prettier
     :diminish)
 

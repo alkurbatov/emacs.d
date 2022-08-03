@@ -36,7 +36,7 @@
 ;;; Code:
 
 (use-package vue-mode
-  :after flycheck
+  :after (flycheck add-node-modules-path)
 
   :mode "\\.vue\\'"
   :commands (vue-mode)
@@ -45,7 +45,6 @@
   (setq-default indent-tabs-mode nil)
 
   :config
-  (use-package add-node-modules-path)
   (use-package prettier
     :diminish)
 
