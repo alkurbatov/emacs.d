@@ -89,10 +89,6 @@
   (org-babel-do-load-languages 'org-babel-load-languages
                                load-language-list)
 
-  :hook
-  ;; Enable nice wrapping only in org-mode to avoid corrupting agenda.
-  (org-mode . visual-line-mode)
-
   :bind
   (("C-c a" . org-agenda)
    ("C-c c" . org-capture)
