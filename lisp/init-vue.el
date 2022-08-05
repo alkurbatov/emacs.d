@@ -36,9 +36,10 @@
 ;;; Code:
 
 (use-package vue-mode
-  :after (flycheck add-node-modules-path)
+  :after flycheck
 
   :mode "\\.vue\\'"
+
   :commands (vue-mode)
 
   :init

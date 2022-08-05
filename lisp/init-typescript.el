@@ -33,9 +33,9 @@
 
 ;;; Code:
 (use-package web-mode
-  :after add-node-modules-path
-
   :mode "\\.tsx\\'"
+
+  :commands (web-mode)
 
   :config
   (flycheck-add-mode 'typescript-tslint 'web-mode)
@@ -50,13 +50,14 @@
 (use-package tide
   :diminish
 
-  :after (typescript-mode company flycheck add-node-modules-path)
+  :after (typescript-mode company flycheck)
+
+  :commands (typescript-mode)
 
   :hook
   ((typescript-mode . add-node-modules-path)
    (typescript-mode . tide-setup)
    (typescript-mode . tide-hl-identifier-mode)))
-
 
 (provide 'init-typescript)
 

@@ -32,7 +32,8 @@
 ;;
 
 ;;; Code:
-(use-package add-node-modules-path)
+(use-package add-node-modules-path
+  :commands add-node-modules-path)
 
 (use-package json-mode
   :init
