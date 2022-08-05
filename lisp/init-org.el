@@ -76,6 +76,9 @@
   ;; Add current time when marking item as 'done'.
   (setq org-log-done 'time)
 
+  (setq org-todo-keywords
+      '((sequence "TODO" "|" "DONE" "CANCELLED")))
+
   ;; Better source code highlighting.
   (setq org-confirm-babel-evaluate nil
         org-src-fontify-natively t
