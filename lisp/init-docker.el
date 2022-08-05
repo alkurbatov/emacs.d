@@ -39,5 +39,8 @@
 
 (use-package docker-compose-mode)
 
+(use-package docker
+  :bind ("C-x c" . docker))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init-docker.el ends here
