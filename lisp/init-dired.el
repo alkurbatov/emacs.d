@@ -1,4 +1,4 @@
-;; init-treeview.el --- Initialize tree view configurations. -*- lexical-binding: t -*
+;; init-dired.el --- Initialize file manager configurations. -*- lexical-binding: t -*
 
 ;; Copyright (c) 2021-2022 Alexander Kurbatov
 ;;
@@ -28,24 +28,26 @@
 
 ;;; Commentary:
 ;;
-;; Tree view configuration.
+;; File manager configuration.
 ;;
 
 ;;; Code:
-
-(use-package treemacs
+(use-package dirvish
   :config
-  (use-package treemacs-projectile)
-  (use-package treemacs-magit)
+  (dirvish-override-dired-mode)
 
-  (use-package lsp-treemacs
-    :config
-    (lsp-treemacs-sync-mode 1))
+  (setq dirvish-attributes '(subtree-state collapse dirvish-side))
+  (when (display-graphic-p)
+    (add-to-list 'dirvish-attributes 'all-the-icons)
+    (add-to-list 'dirvish-attributes 'file-size))
+
+  (setq dirvish-preview-dispatchers '(archive no-media))
 
   :bind
-  ([f10] . treemacs))
+  (("C-x d" . dirvish)
+   ([f10] . dirvish-side)))
 
-(provide 'init-treeview)
+(provide 'init-dired)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; init-treeview.el ends here
+;;; init-dired.el ends here

@@ -63,7 +63,7 @@
 (require 'init-ivy)
 (require 'init-flycheck)
 (require 'init-help)
-(require 'init-treeview)
+(require 'init-dired)
 (require 'init-yasnippet)
 
 ;; Tooling

@@ -86,6 +86,11 @@
       inhibit-startup-screen t
       inhibit-startup-echo-area-message t)
 
+;; Install nice icons.
+;; Don't forget to also install fonts manually by calling 'M-x all-the-icons-install-fonts'.
+(use-package all-the-icons
+  :if (display-graphic-p))
+
 (provide 'init-ui)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
