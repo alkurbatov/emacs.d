@@ -42,11 +42,10 @@
   :config
   (setq js-indent-level 2))
 
-(use-package js2-mode
-  :after (flycheck add-node-modules-path)
+(use-package js-mode
+  :ensure nil
 
-  :mode "\\.js\\'"
-  :interpreter "node"
+  :after flycheck
 
   :init
   (setq-default indent-tabs-mode nil)
@@ -55,19 +54,11 @@
   (use-package prettier
     :diminish)
 
-  ;; Setup flycheck.
-  ;; Do C-c ! s for manual selection of a checker.
-  (setq flycheck-checker 'javascript-eslint)
-
   :hook
-  (js2-mode . add-node-modules-path)
+  (js-mode . add-node-modules-path)
 
   :custom
-  (js-indent-level 2)
-
-  ;; Disable js2-mode embedded checker in favor of flycheck.
-  (js2-mode-show-parse-errors nil)
-  (js2-mode-show-strict-warnings nil))
+  (js-indent-level 2))
 
 (provide 'init-js)
 
