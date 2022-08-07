@@ -38,7 +38,9 @@
   (("README\\.md\\'" . gfm-mode)
    ("\\.md\\'" . markdown-mode)
    ("\\.markdown\\'" . markdown-mode)
-   ("\\.git/COMMIT_EDITMSG\\'" . markdown-mode))
+   ("\\.git/COMMIT_EDITMSG\\'" . (lambda ()
+                                   (markdown-mode)
+                                   (setq-local eldoc-documentation-function #'ignore))))
 
   :init
   (setq markdown-command "multimarkdown")
