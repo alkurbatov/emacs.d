@@ -32,10 +32,20 @@
 ;;
 
 ;;; Code:
-
-(use-package tango-2-theme
+(use-package doom-themes
   :init
-  (load-theme 'tango-2 t)
+  (load-theme 'doom-solarized-light t)
+
+  :config
+  ;; Global settings (defaults)
+  (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
+        doom-themes-enable-italic t) ; if nil, italics is universally disabled
+
+  ;; Enable flashing mode-line on errors
+  (doom-themes-visual-bell-config)
+
+  ;; Corrects (and improves) org-mode's native fontification.
+  (doom-themes-org-config)
 
   :custom-face
   (flycheck-error ((t (:background "firebrick" :foreground "white" :underline nil))))
