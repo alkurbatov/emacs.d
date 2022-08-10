@@ -48,12 +48,12 @@
   (doom-themes-org-config)
 
   :custom-face
-  (flycheck-error ((t (:background "firebrick" :foreground "white" :underline nil))))
-  (flycheck-warning ((t (:background "darkgoldenrod" :foreground "white" :underline nil))))
+  (flycheck-error ((t (:background "red" :foreground "white" :underline nil))))
+  (flycheck-warning ((t (:background "orange" :foreground "white" :underline nil))))
 
-  (git-gutter:added ((t (:foreground "green1" :background nil))))
-  (git-gutter:deleted ((t (:foreground "red1" :background nil))))
-  (git-gutter:modified ((t (:foreground "yellow1" :background nil)))))
+  (git-gutter:added ((t (:foreground "lime green" :background nil))))
+  (git-gutter:deleted ((t (:foreground "red" :background nil))))
+  (git-gutter:modified ((t (:foreground "orange" :background nil)))))
 
 (use-package hl-todo
   :hook (prog-mode . hl-todo-mode)
