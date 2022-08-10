@@ -1,6 +1,6 @@
-;; init-prog.el --- Initialize common programming configurations. -*- lexical-binding: t -*
+;; init-tramp.el --- Initialize Tramp configurations. -*- lexical-binding: t -*
 
-;; Copyright (c) 2021-2022 Alexander Kurbatov
+;; Copyright (c) 2022 Alexander Kurbatov
 ;;
 ;; Author: Alexander.Kurbatov <sandro.kurbatov@gmail.com>
 ;; URL: https://github.com/alkurbatov/emacs.d
@@ -28,49 +28,17 @@
 
 ;;; Commentary:
 ;;
-;; Common programming configuration.
+;; Tramp configuration.
 ;;
 
 ;;; Code:
-(require 'init-custom)
-
-(use-package company
-  :diminish
-
-  :init
-  (setq company-idle-delay 0)
-
-  :hook (after-init . global-company-mode))
-
-(use-package lsp-mode
-  :diminish
-
-  :custom
-  (lsp-auto-guess-root +1)
+(use-package tramp
+  :ensure nil
 
   :config
-  (setq lsp-prefer-flymake nil)
-  (setq lsp-headerline-breadcrumb-enable nil)
+  (setq tramp-default-method "ssh"))
 
-  (use-package lsp-ivy
-    :commands lsp-ivy-workspace-symbol)
-
-  (use-package lsp-ui
-    :commands lsp-ui-mode)
-
-  (lsp-register-client
-   (make-lsp-client :new-connection (lsp-tramp-connection "/usr/bin/clangd")
-                    :major-modes '(c++-mode)
-                    :remote? t
-                    :server-id 'clangd-remote))
-
-  :hook
-  ((c++-mode python-mode java-mode scala-mode) . lsp-deferred)
-
-  :commands
-  (lsp lsp-deferred))
-
-(provide 'init-prog)
+(provide 'init-tramp)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; init-prog.el ends here
+;;; init-tramp.el ends here

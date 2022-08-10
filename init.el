@@ -71,6 +71,7 @@
 (require 'init-makefile)
 (require 'init-org)
 (require 'init-terminal)
+(require 'init-tramp)
 
 ;; Languages.
 (require 'init-bash)
