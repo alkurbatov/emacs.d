@@ -37,6 +37,10 @@
 (use-package flycheck
   :diminish
 
+  :config
+  ;; Hide indicatiors in left-fringe (gui mode).
+  (setq flycheck-indication-mode nil)
+
   :hook
   (after-init . global-flycheck-mode))
 
