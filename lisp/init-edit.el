@@ -98,6 +98,9 @@
 ;; Undo without necessity to press Shift.
 (global-set-key (kbd "C--") 'undo)
 
+;; Make paste work in Russian language.
+(global-set-key (kbd "s-м") 'yank)
+
 (defun insert-date ()
   "Insert current date into the buffer."
   (interactive)
