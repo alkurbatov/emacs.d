@@ -39,6 +39,8 @@
   :diminish
 
   :config
+  (use-package ag)
+
   (projectile-mode +1)
 
   ;; Setup project types.
