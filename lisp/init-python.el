@@ -48,7 +48,6 @@
   (use-package python-black
     :diminish python-black-on-save-mode)
   (use-package py-isort)
-  (use-package py-autopep8)
 
   (setq python-indent-guess-indent-offset-verbose nil)
 
