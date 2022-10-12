@@ -8,7 +8,7 @@ EMACS_HOME=~/.emacs.d
 
 # Purge previous configuration.
 if [ -d "${EMACS_HOME}" ]; then
-    for i in lisp snippets; do
+    for i in eshell lisp snippets; do
         rm -rf "${EMACS_HOME:?}/${i}" || true
     done
 
@@ -21,6 +21,6 @@ fi
 # Install new configuration.
 cp early-init.el init.el "${EMACS_HOME}"
 
-for i in lisp snippets; do
+for i in eshell lisp snippets; do
     cp -r "${i}" "${EMACS_HOME}"
 done

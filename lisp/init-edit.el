@@ -78,8 +78,7 @@
 
 (use-package avy
   :bind
-  (("M-g c" . avy-goto-char-in-line)
-   ("M-g w" . avy-goto-word-1)))
+  ("M-g c" . avy-goto-char-timer))
 
 (global-set-key (kbd "C-x O")
                 (lambda ()

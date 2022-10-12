@@ -1,0 +1,2 @@
+# Force 'clear' to behave like in usual shell:
+alias cls clear 1
