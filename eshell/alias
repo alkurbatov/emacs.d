@@ -1,2 +1,9 @@
-# Force 'clear' to behave like in usual shell:
-alias cls clear 1
+# Common aliases
+alias cls clear 1  # force 'clear' to behave like in usual shell
+
+# Git aliases
+alias gl git pull
+alias gd magit-diff-unstaged
+alias gdc magit-diff-staged
+alias glg git --no-pager log --color --graph --oneline --abbrev-commit --decorate --all --date=short --pretty=format:"%C(cyan)%h %C(yellow)%ad %C(bold green)%d %C(reset)%s <%C(bold blue)%an>"
+alias gs git status -sb
