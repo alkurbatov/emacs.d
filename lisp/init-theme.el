@@ -34,7 +34,7 @@
 ;;; Code:
 (use-package doom-themes
   :init
-  (load-theme 'doom-solarized-light t)
+  (load-theme 'doom-nord t)
 
   :config
   ;; Global settings (defaults)
