@@ -57,12 +57,12 @@
   (setq use-package-enable-imenu-support t))
 
 ;; Automatically updates installed packages.
+;; Run 'auto-package-update-now' to update all the packages immediately.
 (use-package auto-package-update
   :custom
   (auto-package-update-interval 7) ; in days
   (auto-package-update-prompt-before-update t)
   (auto-package-update-delete-old-versions t)
-  (auto-package-update-hide-results t)
 
   :config
   (auto-package-update-maybe))
