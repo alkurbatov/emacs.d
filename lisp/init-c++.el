@@ -59,6 +59,9 @@
                                     "--header-insertion=never"
                                     "--header-insertion-decorators=0"))
 
+  :hook
+  (c++-mode . lsp-deferred)
+
   :custom
   (c-basic-offset 4)
   (c-set-style "bsd"))

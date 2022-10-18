@@ -64,9 +64,6 @@
                     :remote? t
                     :server-id 'clangd-remote))
 
-  :hook
-  ((c++-mode python-mode java-mode scala-mode) . lsp-deferred)
-
   :commands
   (lsp lsp-deferred))
 

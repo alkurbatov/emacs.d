@@ -39,7 +39,8 @@
   (setq poetry-tracking-strategy 'projectile)
 
   :hook
-  (python-mode . poetry-tracking-mode))
+  ((python-mode . poetry-tracking-mode)
+   (python-mode . lsp-deferred)))
 
 (use-package python
   :ensure nil
