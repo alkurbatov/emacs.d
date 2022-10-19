@@ -32,8 +32,6 @@
 ;;
 
 ;;; Code:
-(require 'init-custom)
-
 (use-package poetry
   :config
   (setq poetry-tracking-strategy 'projectile)

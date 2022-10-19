@@ -32,8 +32,6 @@
 ;;
 
 ;;; Code:
-(require 'init-custom)
-
 (use-package flycheck
   :diminish
 
