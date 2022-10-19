@@ -47,6 +47,10 @@
   ;; Corrects (and improves) org-mode's native fontification.
   (doom-themes-org-config)
 
+  :hook
+  (yaml-mode . (lambda()
+                 (face-remap-add-relative 'font-lock-variable-name-face :foreground "#fec66c")))
+
   :custom-face
   (flycheck-error ((t (:background "red" :foreground "white" :underline nil))))
   (flycheck-warning ((t (:background "orange" :foreground "white" :underline nil))))
