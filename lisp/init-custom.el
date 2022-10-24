@@ -37,7 +37,7 @@
   "Set org directory."
   :type 'string)
 
-(defcustom alk/org-projects (expand-file-name "~/Yandex.Disk.localized/org/Проекты")
+(defcustom alk/org-projects (concat alk/org-directory "/Проекты")
   "Set org projects folder."
   :type 'string)
 
