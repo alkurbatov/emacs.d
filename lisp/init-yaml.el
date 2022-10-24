@@ -38,6 +38,10 @@
   (setq-default indent-tabs-mode nil)
   (setq-default tab-width 2))
 
+;; See https://gitlab.com/joewreschnig/gitlab-ci-mode/-/tree/master/
+(use-package gitlab-ci-mode
+  :mode "\\.gitlab-ci.yml\\'")
+
 (provide 'init-yaml)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
