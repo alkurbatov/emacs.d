@@ -39,6 +39,9 @@
   :init
   (setq-default indent-tabs-mode t)
 
+  ;; Highlight only on really long lines.
+  (setq whitespace-line-column 100)
+
   :hook
   (makefile-mode . whitespace-mode))
 
