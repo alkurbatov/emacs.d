@@ -1,0 +1,14 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: meeting-notes
+# key: meeting-notes
+# --
+#+title: $1
+#+date: $2
+
+* ${3:Тема}
+* Участники
+- $4
+* Обсуждалось
+- ${5:Основные тезисы}
+* Следующие шаги
+- TODO $6
