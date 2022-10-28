@@ -1,6 +1,6 @@
-;; init-custom.el --- Initialize custom configurations. -*- lexical-binding: t -*
+;; init-go.el --- Initialize Go configurations. -*- lexical-binding: t -*
 
-;; Copyright (c) 2021-2022 Alexander Kurbatov
+;; Copyright (c) 2022 Alexander Kurbatov
 ;;
 ;; Author: Alexander.Kurbatov <sandro.kurbatov@gmail.com>
 ;; URL: https://github.com/alkurbatov/emacs.d
@@ -28,28 +28,46 @@
 
 ;;; Commentary:
 ;;
-;; Custom configuration.
+;; Go configuration.
 ;;
 
+(require 'init-custom)
+
+;; Set up before-save hooks to format buffer and add/delete imports.
+;; Make sure you don't have other gofmt/goimports hooks enabled.
+(defun setup-go-with-lsp ()
+  "Setup and enable lsp-mode for Go."
+  (lsp-deferred)
+
+  ;; Disable go-build checker to suppress annoying warning
+  ;; when standalone (i.e. without go.mod) go files are opened.
+  (setq flycheck-disabled-checkers '(go-build))
+
+  ;; Enable code formatting on save.
+  (add-hook 'before-save-hook #'lsp-format-buffer t t)
+  (add-hook 'before-save-hook #'lsp-organize-imports t t))
+
 ;;; Code:
+(use-package go-mode
+  :config
+  ;; By some reason this is not in the path
+  ;; when we run in GUI mode on OS X.
+  (when (display-graphic-p)
+    (setq lsp-go-gopls-server-path (concat alk/gobin "/gopls")))
 
-(defcustom alk/gopath (expand-file-name "~/work")
-  "Set path to Go home folder."
-  :type 'string)
+  :hook
+  (go-mode . setup-go-with-lsp))
 
-(defcustom alk/gobin (concat alk/gopath "/bin")
-  "Set path to Go bin folder."
-  :type 'string)
+;; Local Golang playground for short snippets.
+(use-package go-playground
+  :diminish
 
-(defcustom alk/org-directory (expand-file-name "~/Yandex.Disk.localized/org/")
-  "Set org directory."
-  :type 'string)
+  :commands go-playground-mode
 
-(defcustom alk/org-projects (concat alk/org-directory "/Проекты")
-  "Set org projects folder."
-  :type 'string)
+  :config
+  (setq go-playground-basedir "~/work/sandbox"))
 
-(provide 'init-custom)
+(provide 'init-go)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; init-custom.el ends here
+;;; init-go.el ends here
