@@ -97,9 +97,6 @@
 (require 'init-vue)
 (require 'init-yaml)
 
-;; Other
-(require 'init-fun)
-
 ;; Suppress message "For information about GNU Emacs...".
 ;; By some reason work only when set in the main init.el.
 (setq inhibit-startup-echo-area-message "alkurbatov")
