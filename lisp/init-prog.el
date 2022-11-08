@@ -48,7 +48,11 @@
 
   :config
   (setq lsp-prefer-flymake nil)
+
+  ;; See this guide for meaning of this section and additional features to disable:
+  ;; https://emacs-lsp.github.io/lsp-mode/tutorials/how-to-turn-off/
   (setq lsp-headerline-breadcrumb-enable nil)
+  (setq lsp-modeline-code-actions-enable nil)
 
   (use-package lsp-ivy
     :commands lsp-ivy-workspace-symbol)
