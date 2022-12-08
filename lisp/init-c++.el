@@ -60,7 +60,8 @@
                                     "--header-insertion-decorators=0"))
 
   :hook
-  (c++-mode . lsp-deferred)
+  ((c++-mode . lsp-deferred)
+   (c++-mode . tree-sitter-hl-mode))
 
   :custom
   (c-basic-offset 4)

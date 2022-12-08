@@ -56,7 +56,8 @@
     (setq lsp-go-gopls-server-path (concat alk/gobin "/gopls")))
 
   :hook
-  (go-mode . setup-go-with-lsp))
+  ((go-mode . setup-go-with-lsp)
+   (go-mode . tree-sitter-hl-mode)))
 
 ;; Local Golang playground for short snippets.
 (use-package go-playground

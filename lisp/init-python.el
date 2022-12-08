@@ -37,8 +37,7 @@
   (setq poetry-tracking-strategy 'projectile)
 
   :hook
-  ((python-mode . poetry-tracking-mode)
-   (python-mode . lsp-deferred)))
+  (python-mode . poetry-tracking-mode))
 
 (use-package python
   :ensure nil
@@ -54,7 +53,11 @@
         lsp-pylsp-plugins-flake8-enabled t
         lsp-pylsp-plugins-mccabe-enabled nil
         lsp-pylsp-plugins-pyflakes-enabled nil
-        lsp-pylsp-plugins-pycodestyle-enabled nil))
+        lsp-pylsp-plugins-pycodestyle-enabled nil)
+
+  :hook
+  ((python-mode . tree-sitter-hl-mode)
+   (python-mode . lsp-deferred)))
 
 (provide 'init-python)
 

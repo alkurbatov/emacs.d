@@ -69,6 +69,12 @@
   :commands
   (lsp lsp-deferred))
 
+(use-package tree-sitter
+  :config
+  (use-package tree-sitter-langs)
+
+  (global-tree-sitter-mode))
+
 (provide 'init-prog)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
