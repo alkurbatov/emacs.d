@@ -70,6 +70,8 @@
   (lsp lsp-deferred))
 
 (use-package tree-sitter
+  :diminish
+
   :config
   (use-package tree-sitter-langs)
 
