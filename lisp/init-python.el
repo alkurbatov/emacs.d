@@ -42,6 +42,8 @@
 (use-package python
   :ensure nil
 
+  :after tree-sitter
+
   :config
   (use-package python-black
     :diminish python-black-on-save-mode)

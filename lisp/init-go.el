@@ -49,6 +49,8 @@
 
 ;;; Code:
 (use-package go-mode
+  :after tree-sitter
+
   :config
   ;; By some reason this is not in the path
   ;; when we run in GUI mode on OS X.
