@@ -50,6 +50,7 @@
 
 ;; Should be set before loading 'use-package'.
 (eval-and-compile
+  (setq use-package-verbose t)
   (setq use-package-always-ensure t)
   (setq use-package-always-defer t)
   (setq use-package-expand-minimally t)
