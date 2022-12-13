@@ -72,6 +72,8 @@
 (use-package tree-sitter
   :diminish
 
+  :demand t
+
   :config
   (use-package tree-sitter-langs)
 
