@@ -62,6 +62,23 @@
 (use-package all-the-icons
   :if (display-graphic-p))
 
+(use-package dashboard
+  :demand t
+
+  :config
+  (dashboard-setup-startup-hook)
+
+  (setq dashboard-startup-banner 1)
+  (setq dashboard-center-content t)
+
+  (setq dashboard-items '((recents  . 10)
+                          (projects . 6)
+                          (bookmarks . 5)))
+
+  (when (display-graphic-p)
+    (setq dashboard-set-heading-icons t)
+    (setq dashboard-set-file-icons t)))
+
 (provide 'init-ui)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
