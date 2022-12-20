@@ -38,7 +38,14 @@
   (set-frame-font "JetBrains Mono 14" nil t))
 
 (use-package doom-modeline
-  :init (doom-modeline-mode 1))
+  :demand t
+
+  :init
+  (setq doom-modeline-minor-modes t
+        doom-modeline-vcs-max-length 20)
+
+  :config
+  (doom-modeline-mode 1))
 
 ;; Always show line numbers.
 (global-display-line-numbers-mode t)

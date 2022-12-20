@@ -35,10 +35,17 @@
 (use-package company
   :diminish
 
-  :init
-  (setq company-idle-delay 0)
+  :demand t
 
-  :hook (after-init . global-company-mode))
+  :init
+  (setq company-idle-delay 0.1)
+  (setq company-minimum-prefix-length 1)
+
+  :hook (after-init . global-company-mode)
+
+  :bind (:map company-active-map
+         ("C-n" . company-select-next)
+         ("C-p". company-select-previous)))
 
 (use-package lsp-mode
   :diminish

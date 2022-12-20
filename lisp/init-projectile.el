@@ -38,6 +38,8 @@
 (use-package projectile
   :diminish
 
+  :demand t
+
   :config
   (use-package ag)
 

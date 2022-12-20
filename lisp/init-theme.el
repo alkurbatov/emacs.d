@@ -33,13 +33,15 @@
 
 ;;; Code:
 (use-package doom-themes
-  :init
-  (load-theme 'doom-nord t)
+  :demand t
 
-  :config
+  :init
   ;; Global settings (defaults)
   (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
         doom-themes-enable-italic t) ; if nil, italics is universally disabled
+
+  :config
+  (load-theme 'doom-nord t)
 
   ;; Enable flashing mode-line on errors
   (doom-themes-visual-bell-config)
