@@ -36,7 +36,12 @@
 (use-package yaml-mode
   :init
   (setq-default indent-tabs-mode nil)
-  (setq-default tab-width 2))
+  (setq-default tab-width 2)
+
+  :config
+  ;; Workaround possible bug in yaml-lint as config file
+  ;; is not applied by default.
+  (setq flycheck-yamllintrc ".yamllint.yml"))
 
 ;; See https://gitlab.com/joewreschnig/gitlab-ci-mode/-/tree/master/
 (use-package gitlab-ci-mode
