@@ -35,10 +35,13 @@
 (require 'init-custom)
 
 (defun org-insert-todo-item ()
-  "Insert TODO heading with 'created' timestamp as property."
+  "Insert TODO heading with 'created' timestamp."
   (interactive)
   (org-insert-todo-heading-respect-content nil)
-  (org-entry-put nil "CREATED" (format-time-string "[%Y-%m-%d]")))
+  (save-excursion
+    (newline-and-indent)
+    (insert (format-time-string "[%Y-%m-%d]")))
+  (insert " "))
 
 (use-package org
   :ensure nil
