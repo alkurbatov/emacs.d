@@ -33,6 +33,14 @@
 
 ;;; Code:
 
+;; Defer garbage collection further back in the startup process
+;; to make startup faster by reducing the frequency of garbage
+;; collection. The default is 0.8MB. Measured in bytes.
+;;
+;; Set the garbage collection threshold to high (100 MB) since
+;; LSP client-server communication generates a lot of output/garbage.
+(setq gc-cons-threshold (* 100 1000 1000))
+
 ;; Do not initialise the package manager. This is done in `init.el'.
 (setq package-enable-at-startup nil)
 
@@ -45,9 +53,11 @@
 
 ;; Faster to disable these here (before they've been initialized)
 (menu-bar-mode -1)
+(setq inhibit-startup-message t) ;; hide welcome screen
 (push '(menu-bar-lines . 0) default-frame-alist)
 (push '(tool-bar-lines . 0) default-frame-alist)
 (push '(vertical-scroll-bars) default-frame-alist)
+(push '(mouse-color . "white") default-frame-alist)
 
 ;; Resizing the Emacs frame can be a terribly expensive part of changing the
 ;; font. By inhibiting this, we easily halve startup times with fonts that are
