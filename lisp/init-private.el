@@ -1,6 +1,6 @@
-;; init-flycheck.el --- Initialize flycheck configurations. -*- lexical-binding: t -*
+;; init-private.el --- Initialize common private variables. -*- lexical-binding: t -*
 
-;; Copyright (c) 2021-2022 Alexander Kurbatov
+;; Copyright (c) 2022 Alexander Kurbatov
 ;;
 ;; Author: Alexander.Kurbatov <sandro.kurbatov@gmail.com>
 ;; URL: https://github.com/alkurbatov/emacs.d
@@ -28,33 +28,13 @@
 
 ;;; Commentary:
 ;;
-;; Flycheck configurations.
+;;  Common private variables not intended to be configured by users.
 ;;
 
 ;;; Code:
-(require 'init-private)
+(defvar alk-pvt/flycheck-local-cache nil)
 
-(defun alk/flycheck-checker-get (fn checker property)
-  (or (alist-get property (alist-get checker alk-pvt/flycheck-local-cache))
-      (funcall fn checker property)))
-
-(use-package flycheck
-  :diminish
-
-  :demand t
-
-  :config
-  ;; Force additional checkers launched after lsp mode if needed.
-  ;; See https://github.com/flycheck/flycheck/issues/1762
-  (advice-add 'flycheck-checker-get :around 'alk/flycheck-checker-get)
-
-  ;; Hide indicatiors in left-fringe (gui mode).
-  (setq flycheck-indication-mode nil)
-
-  :hook
-  (after-init . global-flycheck-mode))
-
-(provide 'init-flycheck)
+(provide 'init-private)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; init-flycheck.el ends here
+;;; init-private.el ends here
