@@ -41,6 +41,7 @@
 (setq gc-cons-percentage 0.6)
 
 (add-to-list 'load-path "~/.emacs.d/lisp/")
+(add-to-list 'load-path "~/.emacs.d/site-lisp/")
 
 ;; Packages.
 (require 'init-package)
