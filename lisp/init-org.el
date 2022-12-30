@@ -54,6 +54,10 @@
   ;; Hide the emphasis markup (italics, bold, etc).
   (setq org-hide-emphasis-markers t)
 
+  ;; Return or left-click with mouse follows link.
+  (customize-set-variable 'org-return-follows-link t)
+  (customize-set-variable 'org-mouse-1-follows-link t)
+
   ;; Show nice-looking symbols instead of asterisks.
   (use-package org-superstar
     :init
@@ -99,7 +103,8 @@
   (("C-c a" . org-agenda)
    ("C-c c" . org-capture)
    ("C-c l" . org-store-link)
-   ("C-c C-x t" . org-insert-todo-item)))
+   ("C-c C-x t" . org-insert-todo-item)
+   ("C-c z" . org-toggle-link-display)))
 
 (provide 'init-org)
 
