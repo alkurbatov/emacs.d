@@ -9,6 +9,6 @@ Run `install.sh` to install the configuration files on local machine.
 * [modeline customization with doom-modeline](https://github.com/seagle0128/doom-modeline)
 
 ## License
-Copyright (c) 2021-2022 Alexander Kurbatov
+Copyright (c) 2021-2023 Alexander Kurbatov
 
 Licensed under the [MIT license](LICENSE).

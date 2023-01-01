@@ -1,6 +1,6 @@
 ;; init-help.el --- Initialize documentation and search configurations. -*- lexical-binding: t -*
 
-;; Copyright (c) 2021-2022 Alexander Kurbatov
+;; Copyright (c) 2021-2023 Alexander Kurbatov
 ;;
 ;; Author: Alexander.Kurbatov <sandro.kurbatov@gmail.com>
 ;; URL: https://github.com/alkurbatov/emacs.d
