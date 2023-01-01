@@ -55,6 +55,7 @@
 (require 'init-edit)
 (require 'init-ui)
 (require 'init-theme)
+(require 'init-calendar)
 
 ;; Programming.
 (require 'init-prog)

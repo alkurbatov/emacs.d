@@ -1,6 +1,6 @@
-;; init-basic.el --- Better default configurations. -*- lexical-binding: t -*
+;; init-calendar.el --- Initialize Calendar configurations. -*- lexical-binding: t -*
 
-;; Copyright (c) 2021-2022 Alexander Kurbatov
+;; Copyright (c) 2022 Alexander Kurbatov
 ;;
 ;; Author: Alexander.Kurbatov <sandro.kurbatov@gmail.com>
 ;; URL: https://github.com/alkurbatov/emacs.d
@@ -28,36 +28,34 @@
 
 ;;; Commentary:
 ;;
-;; Better defaults.
+;; Calendar configuration.
 ;;
 
 ;;; Code:
-(require 'init-consts)
+(setq calendar-week-start-day 1)     ; start week from Monday
+(setq calendar-date-style 'european) ; use the DD/MM/YYYY format for the diary dates
 
-;; Backups.
-(setq backup-directory-alist '(("." . "~/.emacs.d/backups/")))
-(setq auto-save-file-name-transforms `((".*" ,"~/.emacs.d/backups/" t)))
+;; Display week number in calendar.
+;; See https://www.emacswiki.org/emacs/CalendarWeekNumbers
+(copy-face font-lock-constant-face 'calendar-iso-week-face)
+(set-face-attribute 'calendar-iso-week-face nil :height 0.7)
 
-(fset 'yes-or-no-p 'y-or-n-p) ; answer y or n instead of yes or no
+(setq calendar-intermonth-text
+      '(propertize
+        (format "W%d"
+                (car
+                 (calendar-iso-from-absolute
+                  (calendar-absolute-from-gregorian (list month day year)))))
+        'font-lock-face 'calendar-iso-week-face))
 
-;; Buffers.
-(kill-buffer "*scratch*") ; usually not used
+(copy-face 'default 'calendar-iso-week-header-face)
+(set-face-attribute 'calendar-iso-week-header-face nil
+                    :height 0.7)
 
-;; Start in fullscreen.
-(add-to-list 'default-frame-alist '(fullscreen . maximized))
+(set-face-attribute 'calendar-iso-week-face nil
+                      :height 1.0 :foreground "brightblack")
 
-;; Inject paths to brew programs when Emacs is started from Spotlight.
-(when sys/mac-x-p
-  (use-package exec-path-from-shell
-    :init
-    (setq exec-path-from-shell-variables '("PATH" "MANPATH")
-          exec-path-from-shell-arguments '("-l"))
-    (exec-path-from-shell-initialize)))
-
-;; Mouse.
-(xterm-mouse-mode t) ; enable basic mouse support to prevent scrolling issues etc
-
-(provide 'init-basic)
+(provide 'init-calendar)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; init-basic.el ends here
+;;; init-calendar.el ends here
