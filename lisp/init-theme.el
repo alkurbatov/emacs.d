@@ -59,7 +59,9 @@
 
   (git-gutter:added ((t (:foreground "lime green" :background nil))))
   (git-gutter:deleted ((t (:foreground "red" :background nil))))
-  (git-gutter:modified ((t (:foreground "orange" :background nil)))))
+  (git-gutter:modified ((t (:foreground "orange" :background nil))))
+
+  (calendar-iso-week-face ((t (:height 1.0 :foreground "dark cyan")))))
 
 (use-package hl-todo
   :hook (prog-mode . hl-todo-mode)

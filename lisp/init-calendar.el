@@ -52,9 +52,6 @@
 (set-face-attribute 'calendar-iso-week-header-face nil
                     :height 0.7)
 
-(set-face-attribute 'calendar-iso-week-face nil
-                      :height 1.0 :foreground "brightblack")
-
 (provide 'init-calendar)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
