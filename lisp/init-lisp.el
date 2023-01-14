@@ -36,10 +36,12 @@
 (use-package elisp-mode
   :ensure nil
 
-  :init
-  (setq-default indent-tabs-mode nil)
-
   :config
+  (use-package elisp-autofmt
+    :commands (elisp-autofmt-mode elisp-autofmt-buffer)
+
+    :hook (emacs-lisp-mode . elisp-autofmt-mode))
+
   (show-paren-mode t))
 
 (provide 'init-lisp)
