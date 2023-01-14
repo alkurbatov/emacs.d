@@ -36,7 +36,8 @@
 
 ;; Backups.
 (setq backup-directory-alist '(("." . "~/.emacs.d/backups/")))
-(setq auto-save-file-name-transforms `((".*" ,"~/.emacs.d/backups/" t)))
+(setq auto-save-file-name-transforms
+      `((".*" , "~/.emacs.d/backups/" t)))
 
 (fset 'yes-or-no-p 'y-or-n-p) ; answer y or n instead of yes or no
 
@@ -47,12 +48,15 @@
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
 ;; Inject paths to brew programs when Emacs is started from Spotlight.
-(when sys/mac-x-p
-  (use-package exec-path-from-shell
-    :init
-    (setq exec-path-from-shell-variables '("PATH" "MANPATH")
-          exec-path-from-shell-arguments '("-l"))
-    (exec-path-from-shell-initialize)))
+(use-package exec-path-from-shell
+  :if sys/mac-x-p
+
+  :init
+  (setq
+   exec-path-from-shell-variables '("PATH" "MANPATH")
+   exec-path-from-shell-arguments '("-l"))
+
+  (exec-path-from-shell-initialize))
 
 ;; Mouse.
 (xterm-mouse-mode t) ; enable basic mouse support to prevent scrolling issues etc
