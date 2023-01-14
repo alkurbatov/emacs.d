@@ -72,24 +72,26 @@
 
   ;; Better contrasting highlight.
   (custom-set-faces
-    '(vundo-node ((t (:foreground "#808080"))))
-    '(vundo-stem ((t (:foreground "#808080"))))
-    '(vundo-highlight ((t (:foreground "#FFFF00"))))))
+   '(vundo-node ((t (:foreground "#808080"))))
+   '(vundo-stem ((t (:foreground "#808080"))))
+   '(vundo-highlight ((t (:foreground "#FFFF00"))))))
 
 (use-package avy
   :bind
   ("M-g c" . avy-goto-char-timer))
 
-(global-set-key (kbd "C-x O")
-                (lambda ()
-                  (interactive)
-                  (other-window -1)))
+(global-set-key
+ (kbd "C-x O")
+ (lambda ()
+   (interactive)
+   (other-window -1)))
 
 ;; Join line to next line.
-(global-set-key (kbd "C-j")
-                (lambda ()
-                  (interactive)
-                  (join-line -1)))
+(global-set-key
+ (kbd "C-j")
+ (lambda ()
+   (interactive)
+   (join-line -1)))
 
 ;; Join line to previous line.
 (global-set-key (kbd "M-j") 'join-line)

@@ -32,7 +32,7 @@
 ;;
 
 ;;; Code:
-(setq calendar-week-start-day 1)     ; start week from Monday
+(setq calendar-week-start-day 1) ; start week from Monday
 (setq calendar-date-style 'european) ; use the DD/MM/YYYY format for the diary dates
 
 ;; Display week number in calendar.
@@ -41,16 +41,15 @@
 (set-face-attribute 'calendar-iso-week-face nil :height 0.7)
 
 (setq calendar-intermonth-text
-      '(propertize
-        (format "W%d"
-                (car
-                 (calendar-iso-from-absolute
-                  (calendar-absolute-from-gregorian (list month day year)))))
-        'font-lock-face 'calendar-iso-week-face))
+      '(propertize (format "W%d"
+                           (car
+                            (calendar-iso-from-absolute
+                             (calendar-absolute-from-gregorian
+                              (list month day year)))))
+                   'font-lock-face 'calendar-iso-week-face))
 
 (copy-face 'default 'calendar-iso-week-header-face)
-(set-face-attribute 'calendar-iso-week-header-face nil
-                    :height 0.7)
+(set-face-attribute 'calendar-iso-week-header-face nil :height 0.7)
 
 (provide 'init-calendar)
 

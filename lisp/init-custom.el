@@ -41,7 +41,8 @@
   "Set path to Go bin folder."
   :type 'string)
 
-(defcustom alk/org-directory (expand-file-name "~/Yandex.Disk.localized/org/")
+(defcustom alk/org-directory
+  (expand-file-name "~/Yandex.Disk.localized/org/")
   "Set org directory."
   :type 'string)
 
