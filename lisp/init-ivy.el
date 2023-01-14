@@ -1,6 +1,6 @@
 ;; init-ivy.el --- Initialize Ivy toolset configurations. -*- lexical-binding: t -*
 
-;; Copyright (c) 2022 Alexander Kurbatov
+;; Copyright (c) 2022-2023 Alexander Kurbatov
 ;;
 ;; Author: Alexander.Kurbatov <sandro.kurbatov@gmail.com>
 ;; URL: https://github.com/alkurbatov/emacs.d
