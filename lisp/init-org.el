@@ -47,6 +47,9 @@
   :ensure nil
 
   :config
+  ;; Small speedup, we don't need the agenda after every start.
+   (setq org-agenda-inhibit-startup t)
+
   ;; Load org files with tasks.
   (setq org-agenda-files `(,alk/org-directory))
   (nconc org-agenda-files (directory-files-recursively alk/org-projects "\\.org$"))
@@ -98,6 +101,26 @@
                                (shell . t)))
   (org-babel-do-load-languages 'org-babel-load-languages
                                load-language-list)
+
+  ;; Ask ispell to ignore org content blocks.
+  (add-to-list 'ispell-skip-region-alist '(":PROPERTIES:" . ":END:"))
+  (add-to-list 'ispell-skip-region-alist '("#\\+BEGIN_SRC" . "#\\+END_SRC"))
+  (add-to-list 'ispell-skip-region-alist '("#\\+BEGIN_EXAMPLE" . "#\\+END_EXAMPLE"))
+
+  ;; Customize some links, see:
+  ;; https://kitchingroup.cheme.cmu.edu/blog/2016/11/04/New-link-features-in-org-9/
+
+  ;; "Green" projects aka moving me to personal targets.
+  (org-link-set-parameters
+    "green-project"
+    :face '(:foreground "green" :underline t)
+    :follow (lambda (path) (org-open-file path)))
+
+  ;; "Red" projects aka must-do-or-be-fired.
+  (org-link-set-parameters
+    "red-project"
+    :face '(:foreground "firebrick2" :underline t)
+    :follow (lambda (path) (org-open-file path)))
 
   :bind
   (("C-c a" . org-agenda)
