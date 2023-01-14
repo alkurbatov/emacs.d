@@ -2,7 +2,12 @@
 Inspired by [Centaur Emacs](https://github.com/seagle0128/.emacs.d) and [M-Emacs](https://github.com/MatthewZMD/.emacs.d).
 
 ## Installation
-Run `install.sh` to install the configuration files on local machine.
+Run `make install` to install the configuration files on local machine.
+
+To get other available commands run:
+```bash
+make help
+```
 
 ## Documentation
 * [use-package syntax and available options](https://github.com/jwiegley/use-package)
