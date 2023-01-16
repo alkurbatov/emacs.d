@@ -55,6 +55,9 @@
 
   :after projectile
 
+  :hook
+  (eshell-mode . display-line-numbers-mode)
+
   :bind
   (("C-x -" . open-eshell-at-bottom)
    ("C-x |" . open-eshell-at-right-side)))

@@ -32,11 +32,11 @@
 ;;
 
 ;;; Code:
-
 (use-package yaml-mode
   :init
-  (setq-default indent-tabs-mode nil)
-  (setq-default tab-width 2)
+  (setq-default
+   indent-tabs-mode nil
+   tab-width 2)
 
   :config
   ;; Workaround possible bug in yaml-lint as config file

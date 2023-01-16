@@ -48,7 +48,7 @@
 
   :config
   ;; Small speedup, we don't need the agenda after every start.
-   (setq org-agenda-inhibit-startup t)
+  (setq org-agenda-inhibit-startup t)
 
   ;; Load org files with tasks.
   (setq org-agenda-files `(,alk/org-directory))

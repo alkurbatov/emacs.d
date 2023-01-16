@@ -65,9 +65,13 @@
   :config
   (doom-modeline-mode 1))
 
-;; Always show line numbers.
-(global-display-line-numbers-mode t)
-(setq display-line-numbers "%4d \u2502 ")
+(use-package display-line-numbers
+  :ensure nil
+  :demand t
+
+  :diminish
+
+  :hook (prog-mode text-mode))
 
 (column-number-mode 1) ; always show column number
 
