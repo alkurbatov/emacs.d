@@ -32,6 +32,8 @@
 ;;
 
 ;;; Code:
+(require 'init-consts)
+
 (use-package dirvish
   :config
   (dirvish-override-dired-mode)
@@ -42,6 +44,13 @@
     (add-to-list 'dirvish-attributes 'file-size))
 
   (setq dirvish-preview-dispatchers '(archive no-media))
+
+  ;; On OS X use GNU version of ls with --dired option support
+  ;; to properly work with dired.
+  (when sys/macp
+    (setq
+     dired-use-ls-dired t
+     insert-directory-program "/usr/local/opt/coreutils/libexec/gnubin/ls"))
 
   :bind
   (("C-x d" . dirvish)
