@@ -38,7 +38,8 @@
 
   :custom
   (git-commit-summary-max-length 50)
-  (git-commit-fill-column 72))
+  (git-commit-fill-column 72)
+  (git-commit-major-mode 'markdown-mode))
 
 (use-package git-gutter
   :diminish
