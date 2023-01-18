@@ -38,7 +38,7 @@
   :config
   (dirvish-override-dired-mode)
 
-  (setq dirvish-attributes '(subtree-state collapse dirvish-side))
+  (setq dirvish-attributes '(subtree-state dirvish-side))
   (when (display-graphic-p)
     (add-to-list 'dirvish-attributes 'all-the-icons)
     (add-to-list 'dirvish-attributes 'file-size))
@@ -50,7 +50,13 @@
   (when sys/macp
     (setq
      dired-use-ls-dired t
-     insert-directory-program "/usr/local/opt/coreutils/libexec/gnubin/ls"))
+     insert-directory-program "/usr/local/opt/coreutils/libexec/gnubin/ls"
+     dired-listing-switches "--group-directories-first -Alh"))
+
+  ;; Tweak files and folders deletion.
+  (setq
+   delete-by-moving-to-trash t
+   dired-recursive-deletes 'always)
 
   :bind
   (("C-x d" . dirvish)
