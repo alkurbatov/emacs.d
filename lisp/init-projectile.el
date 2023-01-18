@@ -46,12 +46,19 @@
   (projectile-mode +1)
 
   ;; Setup project types.
+  ;; (!) Normally projectile always asks for confirmation of
+  ;; each project command as a security measure.
+  ;; To disable this behaviour set
+  ;; (setq compilation-read-command nil)
+  (projectile-register-project-type 'go '("go.mod" "go.sum")
+   :project-file "go.mod"
+   :test-suffix "_test.go")
   (projectile-register-project-type 'npm '("package.json")
-                                    :project-file "package.json"
-                                    :compile "npm install"
-                                    :test "npm test"
-                                    :run "npm start"
-                                    :test-suffix ".spec")
+   :project-file "package.json"
+   :compile "npm install"
+   :test "npm test"
+   :run "npm start"
+   :test-suffix ".spec")
 
   :bind-keymap
   ("C-x p" . projectile-command-map)
