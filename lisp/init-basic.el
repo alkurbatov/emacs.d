@@ -50,8 +50,9 @@
 ;; Inject paths to brew programs when Emacs is started from Spotlight.
 (use-package exec-path-from-shell
   :if sys/mac-x-p
+  :demand t
 
-  :init
+  :config
   (setq
    exec-path-from-shell-variables '("PATH" "MANPATH")
    exec-path-from-shell-arguments '("-l"))
