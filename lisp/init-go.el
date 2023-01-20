@@ -67,12 +67,17 @@
   ;; By some reason this is not in the path
   ;; when we run in GUI mode on OS X.
   (when (display-graphic-p)
-    (setq lsp-go-gopls-server-path (concat alk/gobin "/gopls")))
+    (setq godef-command (concat alk/gobin "/godef")))
+
+  :bind
+  ("M-." . godoc-at-point)
 
   :hook
   ((go-mode . setup-go-with-lsp)
    (go-mode . tree-sitter-hl-mode)
-   (go-mode . flycheck-golangci-lint-setup)))
+   (go-mode . flycheck-golangci-lint-setup)
+   ;; Enable syntax highlight in godoc buffer.
+   (godoc-mode . go-mode)))
 
 ;; Local Golang playground for short snippets.
 (use-package go-playground
