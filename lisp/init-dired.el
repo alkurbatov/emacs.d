@@ -38,7 +38,7 @@
   :config
   (dirvish-override-dired-mode)
 
-  (setq dirvish-attributes '(subtree-state dirvish-side))
+  (setq dirvish-attributes '(subtree-state dirvish-side dirvish-subtree-toggle))
   (when (display-graphic-p)
     (add-to-list 'dirvish-attributes 'all-the-icons)
     (add-to-list 'dirvish-attributes 'file-size))
@@ -60,7 +60,8 @@
 
   :bind
   (("C-x d" . dirvish)
-   ([f10] . dirvish-side)))
+   ([f10] . dirvish-side)
+   ([?\t] . dirvish-subtree-toggle))) ; TAB
 
 (provide 'init-dired)
 
