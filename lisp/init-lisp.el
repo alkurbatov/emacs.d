@@ -40,6 +40,8 @@
   (use-package elisp-autofmt
     :commands (elisp-autofmt-mode elisp-autofmt-buffer)
 
+    :config (setq elisp-autofmt-format-quoted nil)
+
     :hook (emacs-lisp-mode . elisp-autofmt-mode))
 
   (show-paren-mode t))
