@@ -62,6 +62,10 @@
 ;; Mouse.
 (xterm-mouse-mode t) ; enable basic mouse support to prevent scrolling issues etc
 
+;; Enable sound support on OS X.
+(when sys/macp
+  (require 'play-sound))
+
 (provide 'init-basic)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
