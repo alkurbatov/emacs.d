@@ -53,6 +53,8 @@
   (git-gutter:added-sign "•")
   (git-gutter:deleted-sign "•"))
 
+(use-package git-modes)
+
 (provide 'init-git)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
