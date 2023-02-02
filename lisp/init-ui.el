@@ -71,7 +71,7 @@
 
   :diminish
 
-  :hook (prog-mode text-mode))
+  :hook (conf-unix-mode prog-mode text-mode))
 
 (column-number-mode 1) ; always show column number
 
