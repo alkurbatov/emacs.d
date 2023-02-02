@@ -61,7 +61,8 @@
   :bind
   (("C-x d" . dirvish)
    ([f10] . dirvish-side)
-   ([?\t] . dirvish-subtree-toggle))) ; TAB
+   :map dirvish-mode-map
+   ("TAB" . dirvish-subtree-toggle)))
 
 (provide 'init-dired)
 
