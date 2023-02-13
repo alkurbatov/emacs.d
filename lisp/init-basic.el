@@ -53,10 +53,6 @@
   :demand t
 
   :config
-  (setq
-   exec-path-from-shell-variables '("PATH" "MANPATH")
-   exec-path-from-shell-arguments '("-l"))
-
   (exec-path-from-shell-initialize))
 
 ;; Mouse.
