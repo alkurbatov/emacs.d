@@ -83,6 +83,7 @@
 (require 'init-ps1)
 (require 'init-python)
 (require 'init-r)
+(require 'init-toml)
 (require 'init-typescript)
 (require 'init-vue)
 (require 'init-yaml)
