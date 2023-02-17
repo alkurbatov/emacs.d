@@ -1,4 +1,4 @@
-;; init-custom.el --- Initialize custom configurations. -*- lexical-binding: t -*
+;; init-custom.el --- Initialize configuration customizations. -*- lexical-binding: t -*
 
 ;; Copyright (c) 2021-2023 Alexander Kurbatov
 ;;
@@ -28,27 +28,36 @@
 
 ;;; Commentary:
 ;;
-;; Custom configuration.
+;; Configuration customization.
 ;;
 
 ;;; Code:
-
 (defcustom alk/gopath (expand-file-name "~/work")
   "Set path to Go home folder."
-  :type 'string)
+  :type 'string
+  :group 'alk)
 
 (defcustom alk/gobin (concat alk/gopath "/bin")
   "Set path to Go bin folder."
-  :type 'string)
+  :type 'string
+  :group 'alk)
 
 (defcustom alk/org-directory
   (expand-file-name "~/Yandex.Disk.localized/org/")
   "Set org directory."
-  :type 'string)
+  :type 'string
+  :group 'alk)
 
 (defcustom alk/org-projects (concat alk/org-directory "/Проекты")
   "Set org projects folder."
-  :type 'string)
+  :type 'string
+  :group 'alk)
+
+(defcustom alk/brew-path
+  "/opt/homebrew"
+  "Set homebrew directory.  Should be set to '/usr/local' for non-silicon Macs."
+  :type 'string
+  :group 'alk)
 
 (provide 'init-custom)
 

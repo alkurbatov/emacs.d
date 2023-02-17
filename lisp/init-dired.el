@@ -33,6 +33,7 @@
 
 ;;; Code:
 (require 'init-consts)
+(require 'init-custom)
 
 (use-package dirvish
   :config
@@ -50,7 +51,7 @@
   (when sys/macp
     (setq
      dired-use-ls-dired t
-     insert-directory-program "/usr/local/opt/coreutils/libexec/gnubin/ls"
+     insert-directory-program (concat alk/brew-path "/opt/coreutils/libexec/gnubin/ls")
      dired-listing-switches "--group-directories-first -Alh"))
 
   ;; Tweak files and folders deletion.
