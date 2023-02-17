@@ -34,8 +34,18 @@
 ;;; Code:
 
 ;; Remember recently edited files.
-;; Use 'M-x recentf-open-file' to quickly switch to one of them.
-(recentf-mode 1)
+(use-package recentf
+  :ensure nil
+
+  :demand t
+
+  :config
+  ;; Avoid conflicts with no-littering package.
+  (add-to-list 'recentf-exclude no-littering-var-directory)
+  (add-to-list 'recentf-exclude no-littering-etc-directory)
+
+  ;; Use 'M-x recentf-open-file' to quickly switch to one of them.
+  (recentf-mode 1))
 
 ;; Remember the last place visited in a file
 (save-place-mode 1)

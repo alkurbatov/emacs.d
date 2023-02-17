@@ -46,10 +46,6 @@
 ;; Packages.
 (require 'init-package)
 
-;; Move customization variables to a separate file, otherwise init.el will be used.
-(setq custom-file "~/.emacs.d/custom-set-variables.el")
-(load custom-file 'noerror 'nomessage)
-
 ;; General settings.
 (require 'init-basic)
 (require 'init-edit)

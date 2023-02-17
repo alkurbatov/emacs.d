@@ -28,16 +28,23 @@
 
 ;;; Commentary:
 ;;
-;; Better defaults.
+;; Better defaults. This file must be loaded first.
 ;;
 
 ;;; Code:
 (require 'init-consts)
 
-;; Backups.
-(setq backup-directory-alist '(("." . "~/.emacs.d/backups/")))
-(setq auto-save-file-name-transforms
-      `((".*" , "~/.emacs.d/backups/" t)))
+(use-package no-littering
+  :demand t
+
+  :config
+  ;; Move auto-save files to dedicated directory under ~/.emacs.d.
+  (setq auto-save-file-name-transforms
+	      `((".*" ,(no-littering-expand-var-file-name "auto-save/") t)))
+
+  ;; Move customization variables to a separate file, otherwise init.el will be used.
+  (setq custom-file (no-littering-expand-etc-file-name "custom.el"))
+  (load custom-file 'noerror 'nomessage))
 
 (fset 'yes-or-no-p 'y-or-n-p) ; answer y or n instead of yes or no
 
