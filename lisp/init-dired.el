@@ -46,13 +46,30 @@
 
   (setq dirvish-preview-dispatchers '(archive no-media))
 
-  ;; On OS X use GNU version of ls with --dired option support
-  ;; to properly work with dired.
   (when sys/macp
+    ;; On OS X use GNU version of ls with --dired option support
+    ;; to properly work with dired.
     (setq
      dired-use-ls-dired t
      insert-directory-program (concat alk/brew-path "/opt/coreutils/libexec/gnubin/ls")
-     dired-listing-switches "--group-directories-first -Alh"))
+     dired-listing-switches "--group-directories-first -Alh")
+
+    (dirvish-define-preview
+     exa (file) "Use `exa' to generate directory preview."
+     :require ("exa") ; tell Dirvish to check if we have the executable
+     (when
+         (file-directory-p file) ; we only interest in directories here
+       `(shell
+         .
+         ("exa"
+          "-algh"
+          "--color=always"
+          "--icons"
+          "--git",
+          "--group-directories-first"
+	  ,file))))
+
+    (add-to-list 'dirvish-preview-dispatchers 'exa))
 
   ;; Tweak files and folders deletion.
   (setq
