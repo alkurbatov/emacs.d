@@ -52,12 +52,14 @@
     :init
     (modern-c++-font-lock-global-mode t))
 
-    (setq lsp-clients-clangd-args '("-j=4"
-                                    "--background-index"
-                                    "--clang-tidy"
-                                    "--completion-style=detailed"
-                                    "--header-insertion=never"
-                                    "--header-insertion-decorators=0"))
+  (setq lsp-clients-clangd-args
+        '("-j=4"
+          "--background-index"
+          "--clang-tidy"
+          "--completion-style=detailed"
+          "--header-insertion=never"
+          "--header-insertion-decorators=0"
+          "--log=info"))
 
   :hook
   ((c++-mode . lsp-deferred)

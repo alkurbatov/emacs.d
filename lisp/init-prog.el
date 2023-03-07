@@ -43,9 +43,11 @@
 
   :hook (after-init . global-company-mode)
 
-  :bind (:map company-active-map
-         ("C-n" . company-select-next)
-         ("C-p". company-select-previous)))
+  :bind
+  (:map
+   company-active-map
+   ("C-n" . company-select-next)
+   ("C-p" . company-select-previous)))
 
 (use-package lsp-mode
   :diminish
@@ -73,10 +75,13 @@
     :commands lsp-ui-mode)
 
   (lsp-register-client
-   (make-lsp-client :new-connection (lsp-tramp-connection "/usr/bin/clangd")
-                    :major-modes '(c++-mode)
-                    :remote? t
-                    :server-id 'clangd-remote))
+   (make-lsp-client
+    :new-connection
+    (lsp-tramp-connection
+     (lambda () (cons "/usr/bin/clangd" lsp-clients-clangd-args)))
+    :major-modes '(c++-mode)
+    :remote? t
+    :server-id 'clangd-remote))
 
   :commands
   (lsp lsp-deferred))
