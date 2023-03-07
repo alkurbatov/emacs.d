@@ -32,7 +32,6 @@
 ;;
 
 (require 'init-custom)
-(require 'init-private)
 
 ;; Set up before-save hooks to format buffer and add/delete imports.
 ;; Make sure you don't have other gofmt/goimports hooks enabled.
@@ -43,6 +42,8 @@
   ;; Disable go-build checker to suppress annoying warning
   ;; when standalone (i.e. without go.mod) go files are opened.
   (setq flycheck-disabled-checkers '(go-build))
+
+  (flycheck-add-next-checker 'lsp 'golangci-lint)
 
   ;; Enable code formatting on save.
   (add-hook 'before-save-hook #'lsp-format-buffer t t)
@@ -58,12 +59,6 @@
     (setq flycheck-golangci-lint-tests t)
     (setq flycheck-golangci-lint-fast t))
 
-  ;; Attach extra linters to lsp mode forcibly.
-  (add-hook 'lsp-managed-mode-hook
-            (lambda ()
-            (when (derived-mode-p 'go-mode)
-              (setq alk-pvt/flycheck-local-cache '((lsp . ((next-checkers . (golangci-lint)))))))))
-
   ;; By some reason this is not in the path
   ;; when we run in GUI mode on OS X.
   (when (display-graphic-p)
@@ -73,8 +68,8 @@
   ("M-." . godoc-at-point)
 
   :hook
-  ((go-mode . setup-go-with-lsp)
-   (go-mode . tree-sitter-hl-mode)
+  ((go-mode . tree-sitter-hl-mode)
+   (go-mode . setup-go-with-lsp)
    (go-mode . flycheck-golangci-lint-setup)
    ;; Enable syntax highlight in godoc buffer.
    (godoc-mode . go-mode)))

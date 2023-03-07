@@ -54,6 +54,11 @@
   (lsp-auto-guess-root +1)
 
   :config
+  ;; Manually inject flycheck support as by some reason it is not enabled by default.
+  (require 'lsp-diagnostics)
+  (lsp-diagnostics-flycheck-enable)
+
+  ;; Disable flymake in favor of flycheck.
   (setq lsp-prefer-flymake nil)
 
   ;; See this guide for meaning of this section and additional features to disable:

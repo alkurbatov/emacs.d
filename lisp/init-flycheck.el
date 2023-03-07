@@ -32,22 +32,12 @@
 ;;
 
 ;;; Code:
-(require 'init-private)
-
-(defun alk/flycheck-checker-get (fn checker property)
-  (or (alist-get property (alist-get checker alk-pvt/flycheck-local-cache))
-      (funcall fn checker property)))
-
 (use-package flycheck
   :diminish
 
   :demand t
 
   :config
-  ;; Force additional checkers launched after lsp mode if needed.
-  ;; See https://github.com/flycheck/flycheck/issues/1762
-  (advice-add 'flycheck-checker-get :around 'alk/flycheck-checker-get)
-
   ;; Hide indicatiors in left-fringe (gui mode).
   (setq flycheck-indication-mode nil)
 

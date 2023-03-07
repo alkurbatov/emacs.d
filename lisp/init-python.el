@@ -32,6 +32,21 @@
 ;;
 
 ;;; Code:
+(defun setup-python-with-lsp ()
+  "Setup and enable lsp-mode for Python."
+
+  ;; NB (alkurbatov): Don't forget to create poetry venvs in project,
+  ;; otherwise pylsp cannot find them and flake8 will be disabled.
+  (setq lsp-pylsp-configuration-sources ["flake8"]
+        lsp-pylsp-plugins-flake8-enabled t
+        lsp-pylsp-plugins-mccabe-enabled nil
+        lsp-pylsp-plugins-pyflakes-enabled nil
+        lsp-pylsp-plugins-pycodestyle-enabled nil)
+
+  (lsp-deferred)
+
+  (flycheck-add-next-checker 'lsp 'python-mypy))
+
 (use-package poetry
   :config
   (setq poetry-tracking-strategy 'projectile)
@@ -51,15 +66,9 @@
 
   (setq python-indent-guess-indent-offset-verbose nil)
 
-  (setq lsp-pylsp-configuration-sources ["flake8"]
-        lsp-pylsp-plugins-flake8-enabled t
-        lsp-pylsp-plugins-mccabe-enabled nil
-        lsp-pylsp-plugins-pyflakes-enabled nil
-        lsp-pylsp-plugins-pycodestyle-enabled nil)
-
   :hook
   ((python-mode . tree-sitter-hl-mode)
-   (python-mode . lsp-deferred)))
+   (python-mode . setup-python-with-lsp)))
 
 (provide 'init-python)
 
