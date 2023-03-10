@@ -32,6 +32,16 @@
 ;;
 
 ;;; Code:
+;; Tweak default style rules.
+(defconst alk-cc-style
+  '("bsd"
+    (c-basic-offset . 4)
+    (c-offsets-alist . ((innamespace . [0])))))
+
+(defun set-cc-style ()
+  "Set custom C++ mode style."
+  (c-add-style "alk-cc-style" alk-cc-style)
+  (c-set-style "alk-cc-style"))
 
 (use-package cc-mode
   :ensure nil
@@ -63,11 +73,8 @@
 
   :hook
   ((c++-mode . lsp-deferred)
-   (c++-mode . tree-sitter-hl-mode))
-
-  :custom
-  (c-basic-offset 4)
-  (c-set-style "bsd"))
+   (c++-mode . tree-sitter-hl-mode)
+   (c++-mode . set-cc-style)))
 
 (provide 'init-c++)
 
