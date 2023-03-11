@@ -32,7 +32,9 @@
 ;;
 
 ;;; Code:
-(use-package ssh-config-mode)
+(use-package ssh-config-mode
+  :hook
+  ((ssh-config-mode ssh-authorized-keys-mode) . display-line-numbers-mode))
 
 (use-package tramp
   :ensure nil
