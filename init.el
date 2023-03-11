@@ -74,7 +74,6 @@
 (require 'init-bash)
 (require 'init-c++)
 (require 'init-go)
-(require 'init-java)
 (require 'init-jinja2)
 (require 'init-js)
 (require 'init-lisp)
