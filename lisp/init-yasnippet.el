@@ -36,9 +36,6 @@
 (use-package yasnippet
   :diminish yas-minor-mode
 
-  :config
-  (setq yas-snippet-dirs '("~/.emacs.d/snippets"))
-
   :hook
   (after-init . yas-global-mode))
 

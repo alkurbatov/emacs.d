@@ -40,7 +40,10 @@
   (use-package elisp-autofmt
     :commands (elisp-autofmt-mode elisp-autofmt-buffer)
 
-    :config (setq elisp-autofmt-format-quoted nil)
+    :config
+    (setq elisp-autofmt-format-quoted nil)
+    (setq elisp-autofmt-cache-directory
+          (concat no-littering-var-directory "elisp-autofmt-cache"))
 
     :hook (emacs-lisp-mode . elisp-autofmt-mode))
 

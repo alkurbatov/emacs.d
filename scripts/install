@@ -21,6 +21,9 @@ fi
 # Install new configuration.
 cp early-init.el init.el "${EMACS_HOME}"
 
-for i in eshell lisp site-lisp snippets; do
+for i in lisp site-lisp; do
     cp -r "${i}" "${EMACS_HOME}"
 done
+
+cp -r eshell "${EMACS_HOME}/etc/"
+cp -r snippets "${EMACS_HOME}/etc/yasnippet/"
