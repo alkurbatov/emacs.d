@@ -67,8 +67,8 @@
 (require 'init-docker)
 (require 'init-makefile)
 (require 'init-org)
+(require 'init-ssh)
 (require 'init-terminal)
-(require 'init-tramp)
 
 ;; Languages.
 (require 'init-bash)

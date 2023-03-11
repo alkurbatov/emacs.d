@@ -1,4 +1,4 @@
-;; init-tramp.el --- Initialize Tramp configurations. -*- lexical-binding: t -*
+;; init-tramp.el --- Initialize SSH (over tramp) configuration. -*- lexical-binding: t -*
 
 ;; Copyright (c) 2022-2023 Alexander Kurbatov
 ;;
@@ -28,17 +28,18 @@
 
 ;;; Commentary:
 ;;
-;; Tramp configuration.
+;; SSH (over tramp) configuration.
 ;;
 
 ;;; Code:
+(use-package ssh-config-mode)
+
 (use-package tramp
   :ensure nil
 
-  :config
-  (setq tramp-default-method "ssh"))
+  :config (setq tramp-default-method "ssh"))
 
-(provide 'init-tramp)
+(provide 'init-ssh)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; init-tramp.el ends here
+;;; init-ssh.el ends here
