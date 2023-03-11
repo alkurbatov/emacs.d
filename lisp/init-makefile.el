@@ -39,8 +39,14 @@
   :init
   (setq-default indent-tabs-mode t)
 
-  ;; Highlight only on really long lines.
-  (setq whitespace-line-column 100)
+  ;; Don't highlight long lines, there is not much we can do with them.
+  (setq whitespace-line-column nil)
+
+  ;; Use better tab symbol.
+  (setq whitespace-display-mappings '((tab-mark ?\t [?› ?\t])))
+
+  ;; Show only tabs.
+  (setq whitespace-style '(tabs tab-mark))
 
   :hook
   (makefile-mode . whitespace-mode))
