@@ -63,15 +63,16 @@
   :diminish)
 
 ;; Trim trailing whitespaces on changed lines.
-(use-package ws-butler
-  :diminish
-
-  :init
-  (setq-default show-trailing-whitespace t)
+(use-package ethan-wspace
+  :config
+  ;; Customized in init-theme.el.
+  (setq ethan-wspace-face-customized t)
 
   :hook
-  ((prog-mode . ws-butler-mode)
-   (org-mode . ws-butler-mode))) ; do not enable in text-mode to avoid trimming in markdown files
+  ((prog-mode org-mode))
+
+  :custom
+  (mode-require-final-newline nil))
 
 (use-package vundo
   :commands (vundo)
