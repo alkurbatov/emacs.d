@@ -60,6 +60,9 @@
   (require 'lsp-diagnostics)
   (lsp-diagnostics-flycheck-enable)
 
+  ;; Refresh lenses faster.
+  (setq lsp-idle-delay 0.1)
+
   ;; Disable flymake in favor of flycheck.
   (setq lsp-prefer-flymake nil)
 
