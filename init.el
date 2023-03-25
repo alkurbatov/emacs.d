@@ -64,6 +64,7 @@
 (require 'init-yasnippet)
 
 ;; Tooling
+(require 'init-conf)
 (require 'init-docker)
 (require 'init-makefile)
 (require 'init-org)
