@@ -47,19 +47,16 @@
 
   (flycheck-add-next-checker 'lsp 'python-mypy))
 
-(use-package poetry
-  :config
-  (setq poetry-tracking-strategy 'projectile)
-
-  :hook
-  (python-mode . poetry-tracking-mode))
-
 (use-package python
   :ensure nil
 
   :after tree-sitter
 
   :config
+  (use-package poetry
+    :config
+    (setq poetry-tracking-strategy 'projectile))
+
   (use-package python-black
     :diminish python-black-on-save-mode)
   (use-package py-isort)
@@ -68,6 +65,7 @@
 
   :hook
   ((python-mode . tree-sitter-hl-mode)
+   (python-mode . poetry-tracking-mode)
    (python-mode . setup-python-with-lsp)))
 
 (provide 'init-python)
