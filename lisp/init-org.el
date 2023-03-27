@@ -43,6 +43,11 @@
     (insert (format-time-string "[%Y-%m-%d]")))
   (insert " "))
 
+(defun alk/org-time-stamp-inactive ()
+  "Insert inactive timestamp with current date."
+  (interactive)
+  (org-insert-time-stamp (current-time) nil t))
+
 (use-package org
   :ensure nil
 
@@ -125,6 +130,7 @@
   :bind
   (("C-c a" . org-agenda)
    ("C-c c" . org-capture)
+   ("C-c i" . alk/org-time-stamp-inactive)
    ("C-c l" . org-store-link)
    ("C-c C-x t" . org-insert-todo-item)
    ("C-c z" . org-toggle-link-display)))
