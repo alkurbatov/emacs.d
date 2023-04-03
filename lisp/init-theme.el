@@ -55,13 +55,13 @@
 
   :custom-face
   (flycheck-error ((t (:background "red" :foreground "white" :underline nil))))
-  (flycheck-warning ((t (:background "orange" :foreground "white" :underline nil))))
+  (flycheck-warning ((t (:background "orange" :foreground "black" :underline nil))))
 
-  (git-gutter:added ((t (:foreground "lime green" :background nil))))
-  (git-gutter:deleted ((t (:foreground "red" :background nil))))
-  (git-gutter:modified ((t (:foreground "orange" :background nil))))
+  (git-gutter:added ((t (:foreground "lime green" :background "unspecified"))))
+  (git-gutter:deleted ((t (:foreground "red" :background "unspecified"))))
+  (git-gutter:modified ((t (:foreground "orange" :background "unspecified"))))
 
-  (ethan-wspace-face ((t (:foreground nil :background "orange"))))
+  (ethan-wspace-face ((t (:foreground "unspecified" :background "orange"))))
 
   (calendar-iso-week-face ((t (:height 1.0 :foreground "dark cyan")))))
 
