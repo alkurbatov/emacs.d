@@ -45,6 +45,8 @@
 
   (flycheck-add-next-checker 'lsp 'golangci-lint)
 
+  (setq lsp-go-use-placeholders nil)
+
   ;; Enable code formatting on save.
   (add-hook 'before-save-hook #'lsp-format-buffer t t)
   (add-hook 'before-save-hook #'lsp-organize-imports t t))

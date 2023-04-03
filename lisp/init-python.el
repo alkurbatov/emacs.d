@@ -41,7 +41,8 @@
         lsp-pylsp-plugins-flake8-enabled t
         lsp-pylsp-plugins-mccabe-enabled nil
         lsp-pylsp-plugins-pyflakes-enabled nil
-        lsp-pylsp-plugins-pycodestyle-enabled nil)
+        lsp-pylsp-plugins-pycodestyle-enabled nil
+        lsp-pylsp-plugins-jedi-completion-include-param nil)
 
   (lsp-deferred)
 
