@@ -64,11 +64,5 @@
 ;; larger than the system default.
 (setq frame-inhibit-implied-resize t)
 
-;; Change the location of the native compilation cache (Emacs 29+).
-(when (fboundp 'startup-redirect-eln-cache)
-  (startup-redirect-eln-cache
-   (convert-standard-filename
-	  (expand-file-name  "var/eln-cache/" user-emacs-directory))))
-
 (provide 'early-init)
 ;;; early-init.el ends here
