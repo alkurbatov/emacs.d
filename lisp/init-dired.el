@@ -39,8 +39,9 @@
   :config
   (dirvish-override-dired-mode)
 
-  (setq dirvish-attributes '(subtree-state dirvish-side dirvish-subtree-toggle))
+  (setq dirvish-attributes '(dirvish-side dirvish-subtree-toggle))
   (when (display-graphic-p)
+    (add-to-list 'dirvish-attributes 'subtree-state)
     (add-to-list 'dirvish-attributes 'all-the-icons)
     (add-to-list 'dirvish-attributes 'file-size))
 
@@ -66,8 +67,8 @@
           "--color=always"
           "--icons"
           "--git",
-          "--group-directories-first"
-	  ,file))))
+          "--group-directories-first",
+          file))))
 
     (add-to-list 'dirvish-preview-dispatchers 'exa))
 
