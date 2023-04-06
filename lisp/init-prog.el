@@ -66,9 +66,11 @@
   ;; Disable flymake in favor of flycheck.
   (setq lsp-prefer-flymake nil)
 
+  (if (not (display-graphic-p))
+    (setq lsp-headerline-breadcrumb-icons-enable nil))
+
   ;; See this guide for meaning of this section and additional features to disable:
   ;; https://emacs-lsp.github.io/lsp-mode/tutorials/how-to-turn-off/
-  (setq lsp-headerline-breadcrumb-enable nil)
   (setq lsp-modeline-code-actions-enable nil)
 
   (use-package lsp-ivy
