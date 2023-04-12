@@ -57,9 +57,9 @@
   (flycheck-error ((t (:background "red" :foreground "white" :underline nil))))
   (flycheck-warning ((t (:background "orange" :foreground "black" :underline nil))))
 
-  (git-gutter:added ((t (:foreground "lime green" :background "unspecified"))))
-  (git-gutter:deleted ((t (:foreground "red" :background "unspecified"))))
-  (git-gutter:modified ((t (:foreground "orange" :background "unspecified"))))
+  (git-gutter:added ((t (:foreground "lime green"))))
+  (git-gutter:deleted ((t (:foreground "red"))))
+  (git-gutter:modified ((t (:foreground "orange"))))
 
   (ethan-wspace-face ((t (:foreground "unspecified" :background "orange"))))
 
