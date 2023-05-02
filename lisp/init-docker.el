@@ -35,7 +35,9 @@
 
 (provide 'init-docker)
 
-(use-package dockerfile-mode)
+(use-package dockerfile-mode
+  :mode
+  ("\\.dockerignore\\'" . gitignore-mode))
 
 (use-package docker-compose-mode)
 
