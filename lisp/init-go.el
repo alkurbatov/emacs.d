@@ -56,6 +56,8 @@
   :after tree-sitter
 
   :config
+  (use-package go-eldoc)
+
   (use-package flycheck-golangci-lint
     :config
     (setq flycheck-golangci-lint-tests t)
@@ -70,7 +72,8 @@
   ("M-." . godoc-at-point)
 
   :hook
-  ((go-mode . tree-sitter-hl-mode)
+  ((go-mode . go-eldoc-setup)
+   (go-mode . tree-sitter-hl-mode)
    (go-mode . setup-go-with-lsp)
    (go-mode . flycheck-golangci-lint-setup)
    ;; Enable syntax highlight in godoc buffer.
