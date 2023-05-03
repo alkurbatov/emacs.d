@@ -37,4 +37,4 @@
 (provide 'init-protobuf)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; init-.el ends here
+;;; init-protobuf.el ends here
