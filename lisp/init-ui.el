@@ -34,6 +34,11 @@
 ;;; Code:
 (require 'init-consts)
 
+;; Transparent Emacs titlebars on macOS.
+(when sys/mac-x-p
+  (add-to-list 'default-frame-alist '(ns-appearance . dark)) ; nil for dark text
+  (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t)))
+
 (use-package ligature
   :demand t
 
