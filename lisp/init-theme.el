@@ -41,7 +41,7 @@
         doom-themes-enable-italic t) ; if nil, italics is universally disabled
 
   :config
-  (load-theme 'doom-nord t)
+  (load-theme 'doom-material t)
 
   ;; Enable flashing mode-line on errors
   (doom-themes-visual-bell-config)
@@ -62,6 +62,10 @@
   (git-gutter:modified ((t (:foreground "orange"))))
 
   (ethan-wspace-face ((t (:foreground "unspecified" :background "orange"))))
+
+  ;; Org Agenda colors.
+  (org-scheduled-today ((t (:foreground "brightwhite"))))
+  (org-scheduled ((t (:foreground "grey"))))
 
   (calendar-iso-week-face ((t (:height 1.0 :foreground "dark cyan")))))
 
