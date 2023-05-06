@@ -54,14 +54,6 @@
 ;; Start in fullscreen.
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
-;; Inject paths to brew programs when Emacs is started from Spotlight.
-(use-package exec-path-from-shell
-  :if sys/mac-x-p
-  :demand t
-
-  :config
-  (exec-path-from-shell-initialize))
-
 ;; Mouse.
 (xterm-mouse-mode t) ; enable basic mouse support to prevent scrolling issues etc
 
