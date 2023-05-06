@@ -37,13 +37,11 @@
 ;; Make sure you don't have other gofmt/goimports hooks enabled.
 (defun setup-go-with-lsp ()
   "Setup and enable lsp-mode for Go."
+  ;; Disable lsp checker in favor of golangci-lint.
+  ;; This should be set before invocation of lsp (lsp-deferred) command.
+  (setq-local lsp-diagnostic-package :none)
+
   (lsp-deferred)
-
-  ;; Disable go-build checker to suppress annoying warning
-  ;; when standalone (i.e. without go.mod) go files are opened.
-  (setq flycheck-disabled-checkers '(go-build))
-
-  (flycheck-add-next-checker 'lsp 'golangci-lint)
 
   (setq lsp-go-use-placeholders nil)
 
@@ -72,10 +70,10 @@
   ("M-." . godoc-at-point)
 
   :hook
-  ((go-mode . go-eldoc-setup)
-   (go-mode . tree-sitter-hl-mode)
+  ((go-mode . flycheck-golangci-lint-setup)
    (go-mode . setup-go-with-lsp)
-   (go-mode . flycheck-golangci-lint-setup)
+   (go-mode . go-eldoc-setup)
+   (go-mode . tree-sitter-hl-mode)
    ;; Enable syntax highlight in godoc buffer.
    (godoc-mode . go-mode)))
 
