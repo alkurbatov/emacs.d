@@ -4,7 +4,7 @@ Inspired by [Centaur Emacs](https://github.com/seagle0128/.emacs.d) and [M-Emacs
 ## Emacs installation
 For proper work on OS X Emacs should be installed [from this awesome homebrew recipe](https://github.com/d12frosted/homebrew-emacs-plus)
 ```bash
-brew install emacs-plus@29 --with-imagemagick --with-no-frame-refocus --with-savchenkovaleriy-big-sur-icon
+brew install emacs-plus@29 --with-imagemagick --with-no-frame-refocus --with-savchenkovaleriy-big-sur-icon --with-xwidgets
 ```
 
 ## Project Installation
