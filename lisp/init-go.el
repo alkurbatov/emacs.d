@@ -39,7 +39,7 @@
   "Setup and enable lsp-mode for Go."
   ;; Disable lsp checker in favor of golangci-lint.
   ;; This should be set before invocation of lsp (lsp-deferred) command.
-  (setq-local lsp-diagnostic-package :none)
+  (setq-local lsp-diagnostics-provider :none)
 
   (lsp-deferred)
 
