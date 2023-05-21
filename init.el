@@ -48,6 +48,7 @@
 
 ;; General settings.
 (require 'init-basic)
+(require 'init-backups)
 (require 'init-edit)
 (require 'init-ui)
 (require 'init-theme)
