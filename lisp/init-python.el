@@ -34,19 +34,16 @@
 ;;; Code:
 (defun setup-python-with-lsp ()
   "Setup and enable lsp-mode for Python."
+  (poetry-tracking-mode)
 
-  ;; NB (alkurbatov): Don't forget to create poetry venvs in project,
-  ;; otherwise pylsp cannot find them and flake8 will be disabled.
-  (setq lsp-pylsp-configuration-sources ["flake8"]
-        lsp-pylsp-plugins-flake8-enabled t
-        lsp-pylsp-plugins-mccabe-enabled nil
-        lsp-pylsp-plugins-pyflakes-enabled nil
-        lsp-pylsp-plugins-pycodestyle-enabled nil
-        lsp-pylsp-plugins-jedi-completion-include-param nil)
+  ;; Disable lsp checker in favor of flake8+mypy.
+  ;; This should be set before invocation of lsp (lsp-deferred) command.
+  (setq-local lsp-diagnostics-provider :none)
 
   (lsp-deferred)
 
-  (flycheck-add-next-checker 'lsp 'python-mypy))
+  (flycheck-add-next-checker 'lsp 'python-flake8)
+  (flycheck-add-next-checker 'python-flake8 'python-mypy))
 
 (use-package python
   :ensure nil
@@ -56,7 +53,12 @@
   :config
   (use-package poetry
     :config
-    (setq poetry-tracking-strategy 'projectile))
+    (setq poetry-tracking-strategy 'switch-buffer))
+
+  (use-package lsp-pyright
+    :custom
+    ;; We use mypy instead.
+    (lsp-pyright-typechecking-mode "off"))
 
   (use-package python-black
     :diminish python-black-on-save-mode)
@@ -65,9 +67,8 @@
   (setq python-indent-guess-indent-offset-verbose nil)
 
   :hook
-  ((python-mode . tree-sitter-hl-mode)
-   (python-mode . poetry-tracking-mode)
-   (python-mode . setup-python-with-lsp)))
+  ((python-mode . setup-python-with-lsp)
+   (python-mode . tree-sitter-hl-mode)))
 
 (provide 'init-python)
 
