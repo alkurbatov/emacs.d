@@ -32,7 +32,7 @@
 
 ;;; Code:
 (defun play-sound-internal (sound)
-  "Internal function for `play-sound' (which see)."
+  "Overload internal function playing SOUND."
   (or (eq (car-safe sound) 'sound)
       (signal 'wrong-type-argument (list sound)))
 
