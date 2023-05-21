@@ -67,6 +67,9 @@
   (setq doom-modeline-minor-modes t
         doom-modeline-vcs-max-length 20)
 
+  (if (not (display-graphic-p))
+      (setq doom-modeline-icon nil))
+
   :config
   (doom-modeline-mode 1))
 
@@ -92,8 +95,8 @@
       inhibit-startup-echo-area-message t)
 
 ;; Install nice icons.
-;; Don't forget to also install fonts manually by calling 'M-x all-the-icons-install-fonts'.
-(use-package all-the-icons
+;; Don't forget to also install fonts manually by calling 'M-x nerd-icons-install-fonts'.
+(use-package nerd-icons
   :if (display-graphic-p))
 
 (use-package dashboard

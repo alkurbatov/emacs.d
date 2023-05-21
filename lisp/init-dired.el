@@ -42,7 +42,6 @@
   (setq dirvish-attributes '(dirvish-side dirvish-subtree-toggle))
   (when (display-graphic-p)
     (add-to-list 'dirvish-attributes 'subtree-state)
-    (add-to-list 'dirvish-attributes 'all-the-icons)
     (add-to-list 'dirvish-attributes 'file-size))
 
   (setq dirvish-preview-dispatchers '(archive no-media))
