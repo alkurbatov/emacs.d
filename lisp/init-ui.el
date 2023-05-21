@@ -39,6 +39,9 @@
   (add-to-list 'default-frame-alist '(ns-appearance . dark)) ; nil for dark text
   (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t)))
 
+;; Don't blink the cursor (affects only UI mode).
+(blink-cursor-mode -1)
+
 (use-package ligature
   :demand t
 
