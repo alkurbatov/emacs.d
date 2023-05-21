@@ -32,16 +32,31 @@
 ;;
 
 ;;; Code:
+(require 'init-consts)
+
+(defun alk/apply-theme (appearance)
+  "Load theme, taking current system APPEARANCE into consideration.
+Works only on OS X in UI mode.
+
+Taken from:
+https://github.com/d12frosted/homebrew-emacs-plus#system-appearance-change"
+  (mapc #'disable-theme custom-enabled-themes)
+  (pcase appearance
+    ('light (load-theme 'doom-material t))
+    ('dark (load-theme 'doom-material-dark t))))
+
 (use-package doom-themes
   :demand t
 
   :init
-  ;; Global settings (defaults)
-  (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
-        doom-themes-enable-italic t) ; if nil, italics is universally disabled
+  (setq
+   doom-themes-enable-bold t ; if nil, bold is universally disabled
+   doom-themes-enable-italic t) ; if nil, italics is universally disabled
 
   :config
-  (load-theme 'doom-material t)
+  (if sys/mac-x-p
+      (add-hook 'ns-system-appearance-change-functions #'alk/apply-theme)
+    (load-theme 'doom-material t))
 
   ;; Enable flashing mode-line on errors
   (doom-themes-visual-bell-config)
@@ -50,35 +65,39 @@
   (doom-themes-org-config)
 
   :hook
-  (yaml-mode . (lambda()
-                 (face-remap-add-relative 'font-lock-variable-name-face :foreground "#fec66c")))
+  (yaml-mode . (lambda () (face-remap-add-relative 'font-lock-variable-name-face :foreground "#fec66c")))
 
   :custom-face
-  (flycheck-error ((t (:background "red" :foreground "white" :underline nil))))
-  (flycheck-warning ((t (:background "orange" :foreground "black" :underline nil))))
+  (flycheck-error
+   ((t (:background "red" :foreground "white" :underline nil))))
+  (flycheck-warning
+   ((t (:background "orange" :foreground "black" :underline nil))))
 
   (git-gutter:added ((t (:foreground "lime green"))))
   (git-gutter:deleted ((t (:foreground "red"))))
   (git-gutter:modified ((t (:foreground "orange"))))
 
-  (ethan-wspace-face ((t (:foreground "unspecified" :background "orange"))))
+  (ethan-wspace-face
+   ((t (:foreground "unspecified" :background "orange"))))
 
   ;; Org Agenda colors.
   (org-scheduled-today ((t (:foreground "brightwhite"))))
   (org-scheduled ((t (:foreground "grey"))))
 
-  (calendar-iso-week-face ((t (:height 1.0 :foreground "dark cyan")))))
+  (calendar-iso-week-face
+   ((t (:height 1.0 :foreground "dark cyan")))))
 
 (use-package hl-todo
   :hook (prog-mode . hl-todo-mode)
   :config
-  (setq hl-todo-highlight-punctuation ":"
-        hl-todo-keyword-faces
-        `(("TODO"       warning bold)
-          ("FIXME"      error bold)
-          ("NB"         success bold)
-          ("NOTE"       success bold)
-          ("DEPRECATED" font-lock-doc-face bold))))
+  (setq
+   hl-todo-highlight-punctuation ":"
+   hl-todo-keyword-faces
+   `(("TODO" warning bold)
+     ("FIXME" error bold)
+     ("NB" success bold)
+     ("NOTE" success bold)
+     ("DEPRECATED" font-lock-doc-face bold))))
 
 
 (provide 'init-theme)
