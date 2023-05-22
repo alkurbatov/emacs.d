@@ -50,16 +50,16 @@
 (require 'init-basic)
 (require 'init-backups)
 (require 'init-edit)
-(require 'init-ui)
 (require 'init-theme)
+(require 'init-ui)
 (require 'init-calendar)
 
 ;; Programming.
+(require 'init-flycheck)
 (require 'init-prog)
 (require 'init-git)
 (require 'init-projectile)
 (require 'init-ivy)
-(require 'init-flycheck)
 (require 'init-help)
 (require 'init-dired)
 (require 'init-yasnippet)

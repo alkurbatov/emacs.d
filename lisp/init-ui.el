@@ -66,15 +66,15 @@
 (use-package doom-modeline
   :demand t
 
-  :init
+  :config
   (setq doom-modeline-minor-modes t
         doom-modeline-vcs-max-length 20)
 
   (if (not (display-graphic-p))
       (setq doom-modeline-icon nil))
 
-  :config
-  (doom-modeline-mode 1))
+  :hook
+  (after-init . doom-modeline-mode))
 
 (use-package display-line-numbers
   :ensure nil
